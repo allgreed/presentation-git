@@ -1,0 +1,43 @@
+## Use CLI, don't use GUI
+
+[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
+
+Note:
+- Until you're a git pro at least
+- It's not about being haxxxor, it's about learning
+- If you nead a reason: there are lots of GUIs, yet only one CLI - that means more SO resources for the CLI
+
+
+
+## Have handy info at hand
+
+- Am I in git repo?
+- What branch am I on?
+- Is my repository dirty?
+
+
+### [Don't reinvent the wheel!](https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html)
+
+- `__git_ps1`
+- Requires `bash-completion` package installed and imported to your `.bashrc`
+- Configurable, ex. `GIT_PS1_SHOWDIRTYSTATE=1`
+
+Note:
+- dummy example: `export PS1=$PS1$(__git_ps1); GIT_PS1_SHOWDIRTYSTATE=1`
+- `bash-completion` package may be already installed and imported (at least it is on Ubuntu 16.04 and Debian Stretch)
+- need to hook it up to your prompt, see my dotfiles for details (`allgreed/dotfiles/.bash_prompt`)
+
+
+
+### Use SSH (by default!)
+
+- no need to type passwords
+- no trouble when setting up 2FA
+- much more secure solution
+
+
+### Resources from Github
+
+- [Create a ssh key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+- [Add it to Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+- [Verify that it has been added correctly](https://help.github.com/articles/testing-your-ssh-connection/)
