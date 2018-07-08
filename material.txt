@@ -1,4 +1,3 @@
-
 ## Prerequisites
 
 
@@ -34,6 +33,7 @@ Note:
 
 ## Crafting good commits
 
+### Expand this
 - dobre commity:
 - minimalizowanie `-m`
 - ACID - Atomic (funkcja + testy idą w jednym commicie), Coherent (jeden commit == jedna rzecz, nic się nie wypierdala), Incremental, Documented (short summary - present tense, longer description - rationale, thoughts, etc., footer - Machine triggers, etc.)
@@ -44,12 +44,24 @@ Note:
 
 ## Redefining the workflow
 
-- proste / najczęściej używane komendy - w nowej odsłonie:
-    - git status -s
-    - git add [-p]
-    - git commit -v
+### How much status do you need?
+
+i minimal)
+- `git status`
+vs.
+- `git status -s`
+
+### Add only what you'd like
+- `git add -p`
+
+#### Manual edition of hunks
+
+### Know what you're commiting
+- `git commit -v`
 
 ## Tips and tricks
+
+### Pioretize this!!!!
 
 ### Have handy info at hand
 
@@ -143,9 +155,22 @@ In `.gitconfig`:
     untracked = red reverse
 ```
 
-- .gitconfig - global gitignore, autocrlf, editor, pager, autoprune
-- git diff (Historgram for speed, Patience for readability, jeszcze Myers 
-i minimal)
+#### Global `.gitignore`
+global gitignore,
 
-- Inspiracje:
+#### Editor and pager
+- editor
+- pager
+
+#### Clean up after deleted branches
+autoprune
+
+#### CRLF vs. LF vs. CR
+autocrlf
+
+
+## Sources
+
 - Enrico Campidoglio - Advanced Git Tips and Tricks
+- people's dotfiles
+- my dotfiles
