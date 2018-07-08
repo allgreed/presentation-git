@@ -1,3 +1,10 @@
+## Prerequisites
+
+- status
+- add
+- commit
+- push
+
 ## Use CLI, don't use GUI
 
 [Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
@@ -29,7 +36,7 @@ Note:
 
 
 
-### Use SSH (by default!)
+### Use SSH
 
 - no need to type passwords
 - no trouble when setting up 2FA
@@ -41,3 +48,73 @@ Note:
 - [Create a ssh key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
 - [Add it to Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 - [Verify that it has been added correctly](https://help.github.com/articles/testing-your-ssh-connection/)
+
+## Hub command line
+
+- CLI tool for Github
+
+### Instalation
+
+- `brew install hub`
+or:
+- [Download release](https://github.com/github/hub/releases)
+- `tar -xvf RELEASE_FILE`
+- `./UNTARED_FOLDER/install` 
+
+- `git config --global hub.protocol ssh` (to use SSH)
+
+
+
+## Git autocomplete
+
+- comes by default with `bash-completion` package
+
+
+## Aliases - type less!
+
+
+### Alias `git` itself
+
+- `alias g="git"`
+
+### Add autocompletion
+
+```
+[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
+__git_complete g __git_main
+```
+
+### Alias commands
+
+In `.gitconfig`:
+```
+[alias]
+    s = status
+    d = diff
+    p = push
+    a = add
+    c = commit
+    co = checkout
+```
+
+
+### Powerfull aliases
+
+In `.gitconfig`:
+```
+[alias]
+    purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
+```
+
+- Can't use `_`!
+
+
+### Colors
+
+In `.gitconfig`:
+```
+[color "status"] # "status" can be also: diff, branch, ...
+    added = green ul
+    changed = blue
+    untracked = red reverse
+```
