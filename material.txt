@@ -1,182 +1,26 @@
-
-## Sources
-
-- Paolo Perrotta - How Git Works? (Pluralsight)
-- [Meme](https://twitter.com/agnoster/status/44636629423497217)
-- [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
-- [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
+- maybe add some images
+- maybe add some redymade demos
+- maybe add sliding effects
 
 ===================
 
 // TODO: - mv presentation-git-0 presentation-git-1 -- on Github
-## Prerequisites
 
+- rozwinąć dobre commity
+- przykład (teraz i po toolsach): stage, verify, document
 
-### Comands
+===================
 
-- status
-- add
-- commit
-- push
+- info kontaktowe
 
+===================
 
+- mniej aliasów
+- dodać link na meetupie
+- bardziej składne mazanie po tablicy - rośnie od lewej do prawej
 
-### Use SSH
+===================
 
-- no need to type passwords
-- no trouble when setting up 2FA
-- much more secure solution
-
-
-#### Tutorial resources from Github
-
-- [Create a ssh key](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
-- [Add it to Github](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
-- [Verify that it has been added correctly](https://help.github.com/articles/testing-your-ssh-connection/)
-
-## Crafting good commits
-
-### Expand this
-- dobre commity:
-- minimalizowanie `-m`
-- ACID - Atomic (funkcja + testy idą w jednym commicie), Coherent (jeden commit == jedna rzecz, nic się nie wypierdala), Incremental, Documented (short summary - present tense, longer description - rationale, thoughts, etc., footer - Machine triggers, etc.)
--przykład (teraz i po toolsach): stage, verify, document
-- https://whatthecommit.com/ xD
-- https://chris.beams.io/posts/git-commit/
-- once commited, stays there, so no worries - just be careful when doing `checkouts`
-
-## Redefining the workflow
-
-### How much status do you need?
-
-i minimal)
-- `git status`
-vs.
-- `git status -s`
-
-### Add only what you'd like
-- `git add -p`
-
-#### Manual edition of hunks
-
-### Know what you're commiting
-- `git commit -v`
-
-## Tips and tricks
-
-### Pioretize this!!!!
-
-### Have handy info at hand
-
-- Am I in git repo?
-- What branch am I on?
-- Is my repository dirty?
-- ???
-
-
-#### [Don't reinvent the wheel!](https://web.archive.org/web/20160704140739/http://ithaca.arpinum.org/2013/01/02/git-prompt.html)
-
-- `__git_ps1`
-- Requires `bash-completion` package installed and imported to your `.bashrc`
-- Configurable, ex. `GIT_PS1_SHOWDIRTYSTATE=1`
-
-Note:
-- dummy example: `export PS1=$PS1$(__git_ps1); GIT_PS1_SHOWDIRTYSTATE=1`
-- `bash-completion` package may be already installed and imported (at least it is on Ubuntu 16.04 and Debian Stretch)
-- need to hook it up to your prompt, see my dotfiles for details (`allgreed/dotfiles/.bash_prompt`)
-
-
-
-
-### Hub command line
-
-- CLI tool for Github
-
-#### Instalation
-
-- `brew install hub`
-or:
-- [Download release](https://github.com/github/hub/releases)
-- `tar -xvf RELEASE_FILE`
-- `./UNTARED_FOLDER/install` 
-
-- `git config --global hub.protocol ssh` (to use SSH)
-
-
-
-### Git autocomplete
-
-- comes by default with `bash-completion` package
-
-
-### Aliases - type less!
-
-
-#### Alias `git` itself
-
-- `alias g="git"`
-
-#### Add autocompletion
-
-```
-[ -f /usr/share/bash-completion/completions/git ] && . /usr/share/bash-completion/completions/git
-__git_complete g __git_main
-```
-
-#### Alias commands
-
-In `.gitconfig`:
-```
-[alias]
-    s = status
-    d = diff
-    p = push
-    a = add
-    c = commit
-    co = checkout
-```
-
-
-#### Powerfull aliases
-
-In `.gitconfig`:
-```
-[alias]
-    purge-branches = !git branch --merged >/tmp/merged-branches && vi /tmp/merged-branches && xargs git branch -d </tmp/merged-branches
-```
-
-- Can't use `_`!
-
-
-#### Colors
-
-In `.gitconfig`:
-```
-[color "status"] # "status" can be also: diff, branch, ...
-    added = green ul
-    changed = blue
-    untracked = red reverse
-```
-
-#### Global `.gitignore`
-global gitignore,
-
-#### Editor and pager
-- editor
-- pager
-
-#### Clean up after deleted branches
-autoprune
-
-#### CRLF vs. LF vs. CR
-autocrlf
-
-git diff
-
-## Sources
-
-- Enrico Campidoglio - Advanced Git Tips and Tricks (Pluralsight)
-- people's dotfiles
-- my dotfiles
-
-## Feedback
+https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
+https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
+https://stackoverflow.com/questions/10434326/hash-collision-in-git
