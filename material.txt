@@ -1,3 +1,14 @@
+
+## Sources
+
+- Paolo Perrotta - How Git Works? (Pluralsight)
+- [Meme](https://twitter.com/agnoster/status/44636629423497217)
+- [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
+- [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
+
+===================
+
+// TODO: - mv presentation-git-0 presentation-git-1 -- on Github
 ## Prerequisites
 
 
@@ -8,14 +19,6 @@
 - commit
 - push
 
-### Use CLI, don't use GUI
-
-[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
-
-Note:
-- Until you're a git pro at least
-- It's not about being haxxxor, it's about learning
-- If you nead a reason: there are lots of GUIs, yet only one CLI - that means more SO resources for the CLI
 
 
 ### Use SSH
@@ -168,9 +171,12 @@ autoprune
 #### CRLF vs. LF vs. CR
 autocrlf
 
+git diff
 
 ## Sources
 
-- Enrico Campidoglio - Advanced Git Tips and Tricks
+- Enrico Campidoglio - Advanced Git Tips and Tricks (Pluralsight)
 - people's dotfiles
 - my dotfiles
+
+## Feedback

@@ -1,0 +1,7 @@
+{
+  "name": "placeholer",
+  "private": true,
+  "dependencies": {
+    "reveal.js": "^3.4.1"
+  }
+}
