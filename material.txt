@@ -4,8 +4,6 @@
 
 ===================
 
-// TODO: - mv presentation-git-0 presentation-git-1 -- on Github
-
 - rozwinąć dobre commity
 - przykład (teraz i po toolsach): stage, verify, document
 
