@@ -15,8 +15,9 @@
 <img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/hs.png">
 
 
-### source: github.com/allgreed/presentation-git
 <!-- .slide: data-background-color="black" -->
+### source: github.com/allgreed/presentation-git
+<img src="/img/qr-source.png">
 - The opinions expressed here represent my own and not those of my employer.
 - Questions: during
 - Shitstorm: after
