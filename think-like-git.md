@@ -2,22 +2,16 @@
 ## by Olgierd &#34;Allgreed&#34; Kasprowicz
 
 
+## The whole #!
 <img src="img/git-gets-easy.png" style="width: 200%">
 
 
-## Why? When?
 
-- When you don't work alone
-- When you don't want to work alone anymore
-- Supports every language, every framework
-
-
-### <s>GUI</s> CLI
+<img src="img/gui-vs-cli.png" style="width: 70%">
+- Learning: <s>GUI</s> CLI
+- Work: whatever gets shit done
 
 [Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
-
-- While you're learning at least
-- There are lots of GUIs, yet only one CLI
 
 
 
