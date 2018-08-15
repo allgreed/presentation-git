@@ -16,8 +16,8 @@
 
 
 <!-- .slide: data-background-color="black" -->
-### source: github.com/allgreed/presentation-git
-<img src="/img/qr-source.png">
+<img src="/img/qr-source.png" style="width: 27%; margin: 0">
+### source: [github.com/allgreed/presentation-git](https://github.com/allgreed/presentation-git)
 - The opinions expressed here represent my own and not those of my employer.
 - Questions: during
 - Shitstorm: after

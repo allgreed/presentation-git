@@ -2,12 +2,17 @@
 ## by Olgierd &#34;Allgreed&#34; Kasprowicz
 
 
-## The whole #!
+
+## Myths
+<img src="/img/mythbusters.jpg">
+
+
+## Git is magic
 <img src="img/git-gets-easy.png" style="width: 200%">
 
 
-
-<img src="img/gui-vs-cli.png" style="width: 70%">
+## Gui iz 4 n00bz
+<img src="img/gui-vs-cli.png" style="width: 50%">
 - Learning: <s>GUI</s> CLI
 - Work: whatever gets shit done
 
@@ -17,10 +22,10 @@
 
 ## Let's git to it! From scratch!
 
-- <span class="fragment fade-up" data-fragment-index="1">Persistent map</span>
-- <span class="fragment fade-up" data-fragment-index="2">Stupid content tracker</span>
-- <span class="fragment fade-up" data-fragment-index="3">Revision control system</span>
-- <span class="fragment fade-up" data-fragment-index="4">DVCS</span>
+- <span class="fragment fade-up" data-fragment-index="1">DVCS</span>
+- <span class="fragment fade-up" data-fragment-index="2">Version control system</span><span class="fragment fade-up" style="color:#b58900" data-fragment-index="7"> + network = ↑</span>
+- <span class="fragment fade-up" data-fragment-index="3">Stupid content tracker</span><span class="fragment fade-up" style="color:#b58900" data-fragment-index="6"> + branches & tags = ↑</span>
+- <span class="fragment fade-up" data-fragment-index="4">Persistent map</span><span class="fragment fade-up" style="color:#b58900" data-fragment-index="5"> + trees & commits = ↑</span>
 
 
 
@@ -37,36 +42,53 @@
 - Keys: SHA1 of the content<br>
 - Values: the content
 
-``` bash
-git hash-object
-```
+<br>
 
 ``` bash
 $ echo "elorap" | git hash-object --stdin
+```
+<!-- .element: class="fragment fade-left" -->
+
+```
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
+<!-- .element: class="fragment fade-right" -->
 
 
 ### Details
 
-```
+<br>
+
+``` bash
 $ echo "elorap" | git hash-object --stdin
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
 
-```
+```bash
 $ echo "elorap" | sha1sum -
+```
+<!-- .element: class="fragment fade-left" -->
+
+```
 8aec9bf5a852dbe30b3ebe9854be53feef471a5a  -
 ```
+<!-- .element: class="fragment fade-right" -->
 
+<br>
 ```
 git_hash(content) = sha1("{type} {size_in_bytes}\0{content}")
 ```
+<!-- .element: class="fragment fade-up" -->
+
+```bash
+echo -e "blob 7\0elorap" | sha1sum -
+```
+<!-- .element: class="fragment fade-left" -->
 
 ```
-echo -e "blob 7\0elorap" | sha1sum -
 2511755d6bfe6afb0462cc8ba7b254e371b7e191  -
 ```
+<!-- .element: class="fragment fade-right" -->
 
 
 ### Persistence
@@ -74,27 +96,56 @@ echo -e "blob 7\0elorap" | sha1sum -
 ```
 git init
 ```
+<!-- .element: class="fragment fade-up" -->
+
+#### Insert
+
+```bash
+echo "elorap" | git hash-object --stdin -w
+```
+<!-- .element: class="fragment fade-left" -->
 
 ```
-echo "elorap" | git hash-object --stdin -w
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
+<!-- .element: class="fragment fade-right" -->
 
-```
-.git/objects/25/11755d6bfe6afb0462cc8ba7b254e371b7e191
-```
-
-```
-git cat-file
-```
+#### Retrive
 
 ```
 git cat-file -p 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
+<!-- .element: class="fragment fade-left" -->
 
 ```
-git cat-file -t 2511
+elorap
 ```
+<!-- .element: class="fragment fade-right" -->
+
+
+### Demo
+```
+mkdir -p /tmp/demos/persistent-map
+cd $_
+git init
+echo "elorap" > whatever.txt
+ranger .git
+
+git hash-object whatever.txt -w
+git cat-file -p 2511755d6bfe6afb0462cc8ba7b254e371b7e191
+ranger .git
+```
+
+
+### Typeof "elorap" ?
+```
+git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
+```
+<!-- .element: class="fragment fade-left" data-fragment-index="1"-->
+## Blob
+<!-- .element: class="fragment fade-right" data-fragment-index="3"-->
+<img src="img/the_blob.jpg" style="width: 70%; margin: 0">
+<!-- .element: class="fragment fade-right" data-fragment-index="2"-->
 
 
 

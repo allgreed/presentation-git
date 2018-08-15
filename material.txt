@@ -4,6 +4,13 @@
 
 ===================
 
+Tree notes:
+https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object
+
+===================
+
+- odzippowywanie treści skompresowanych przez gita
+
 ===================
 
 - rozwinąć dobre commity
@@ -19,12 +26,6 @@
 - dodać link na meetupie
 - bardziej składne mazanie po tablicy - rośnie od lewej do prawej
 
-===================
-
-Tree notes:
-https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object
-
-===================
 
 https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
