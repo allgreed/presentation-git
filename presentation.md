@@ -25,6 +25,16 @@
 
 
 
+## Y learn git?
+
+- When you don't work alone
+- When you don't want to work alone anymore
+
+
+## Some of supported technologies
+<img src="/img/supported-languages.jpg">
+
+
 ## Roadmap
 
 - [Think like git](/think-like-git.html)
