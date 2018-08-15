@@ -1,4 +1,5 @@
-# presentation-semver
+# presentation-git
+Olgierd's comprehensive guide to the magnificent, open-source, blockchain-based DVCS
 
 ## Prerequisities
 
