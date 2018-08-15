@@ -4,8 +4,6 @@
 
 ===================
 
-- split into several presentations
-
 ===================
 
 - rozwinąć dobre commity
