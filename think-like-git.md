@@ -2,8 +2,7 @@
 ## by Olgierd &#34;Allgreed&#34; Kasprowicz
 
 
-
-> ## "git gets easier once you get the basic idea that branches are homeomorphic endofunctors mapping submanifolds of a Hilbert space."
+<img src="img/git-gets-easy.png" style="width: 200%">
 
 
 ## Why? When?
