@@ -1,16 +1,18 @@
-<!-- todo: update git remote -->
 # Git: open-source, blockchain-based DVCS 
 ## by Olgierd &#34;Allgreed&#34; Kasprowicz
 
 
-## $$$
+## 🤑
+<!-- .slide: data-background-color="black" -->
 <img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/just.png">
+<hr>
+## 💻
+<img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/hs.png">
 
 
 # <span style="color: #b58900">Disclaimer</span>
 <!-- .slide: data-background-color="black" -->
 
-### [legacy] source: github.com/allgreed/presentation-git-0
 ### source: github.com/allgreed/presentation-git
 
 

@@ -4,6 +4,10 @@
 
 ===================
 
+- split into several presentations
+
+===================
+
 - rozwinąć dobre commity
 - przykład (teraz i po toolsach): stage, verify, document
 
