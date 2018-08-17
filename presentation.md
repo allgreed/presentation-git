@@ -233,11 +233,6 @@ or:<br>
 ```
 
 
-
-## Podziękował!
-Fin.
-
-
 ## Sources
 
 - Enrico Campidoglio - Advanced Git Tips and Tricks (Pluralsight)

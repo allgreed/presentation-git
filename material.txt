@@ -1,15 +1,16 @@
-- maybe add some images
-- maybe add some redymade demos
-- maybe add sliding effects
+http://eagain.net/articles/git-for-computer-scientists/
 
-===================
-
-Tree notes:
-https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object
+- więcej o diffie, merdżach i rebase'ach?
 
 ===================
 
 - odzippowywanie treści skompresowanych przez gita
+
+===================
+
+- encode the email in the contact
+
+- README.md -> you can just view presentation.md and coresponding presentation files
 
 ===================
 
@@ -23,10 +24,12 @@ https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-gi
 ===================
 
 - mniej aliasów
-- dodać link na meetupie
-- bardziej składne mazanie po tablicy - rośnie od lewej do prawej
 
 
 https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
 https://stackoverflow.com/questions/10434326/hash-collision-in-git
+
+====================
+
+- Social aspect - distributed vs. decentralized

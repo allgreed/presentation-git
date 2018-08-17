@@ -47,12 +47,12 @@
 ``` bash
 $ echo "elorap" | git hash-object --stdin
 ```
-<!-- .element: class="fragment fade-left" -->
+<!-- .element: class="fragment fade-up" -->
 
 ```
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
-<!-- .element: class="fragment fade-right" -->
+<!-- .element: class="fragment fade-up" -->
 
 
 ### Details
@@ -67,12 +67,12 @@ $ echo "elorap" | git hash-object --stdin
 ```bash
 $ echo "elorap" | sha1sum -
 ```
-<!-- .element: class="fragment fade-left" -->
+<!-- .element: class="fragment fade-up" -->
 
 ```
 8aec9bf5a852dbe30b3ebe9854be53feef471a5a  -
 ```
-<!-- .element: class="fragment fade-right" -->
+<!-- .element: class="fragment fade-up" -->
 
 <br>
 ```
@@ -83,12 +83,12 @@ git_hash(content) = sha1("{type} {size_in_bytes}\0{content}")
 ```bash
 echo -e "blob 7\0elorap" | sha1sum -
 ```
-<!-- .element: class="fragment fade-left" -->
+<!-- .element: class="fragment fade-up" -->
 
 ```
 2511755d6bfe6afb0462cc8ba7b254e371b7e191  -
 ```
-<!-- .element: class="fragment fade-right" -->
+<!-- .element: class="fragment fade-up" -->
 
 
 ### Persistence
@@ -103,24 +103,24 @@ git init
 ```bash
 echo "elorap" | git hash-object --stdin -w
 ```
-<!-- .element: class="fragment fade-left" -->
+<!-- .element: class="fragment fade-up" -->
 
 ```
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
-<!-- .element: class="fragment fade-right" -->
+<!-- .element: class="fragment fade-up" -->
 
 #### Retrive
 
 ```
 git cat-file -p 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
-<!-- .element: class="fragment fade-left" -->
+<!-- .element: class="fragment fade-up" -->
 
 ```
 elorap
 ```
-<!-- .element: class="fragment fade-right" -->
+<!-- .element: class="fragment fade-up" -->
 
 
 ### Demo
@@ -137,80 +137,324 @@ ranger .git
 ```
 
 
-### Typeof "elorap" ?
+### typeof 2511755 ?
 ```
 git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
-<!-- .element: class="fragment fade-left" data-fragment-index="1"-->
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
 ## Blob
-<!-- .element: class="fragment fade-right" data-fragment-index="3"-->
+<!-- .element: class="fragment fade-up" data-fragment-index="3"-->
 <img src="img/the_blob.jpg" style="width: 70%; margin: 0">
-<!-- .element: class="fragment fade-right" data-fragment-index="2"-->
+<!-- .element: class="fragment fade-up" data-fragment-index="2"-->
 
 
 
 ## Stupid content tracker
 
+
+### What we already know
+<img src="/img/blob-file.jpg">
+
+
+### What we already have
+<img src="/img/bunch-of-blobs.jpg">
+
+
+### What we want
+<img src="/img/grouping.jpg">
+
+
+### How directories group files?
+
+```bash
+.
+├── file0.txt # "test0\n"
+├── file1.txt # "test1\n"
+├── file2.txt # "test2\n"
+└── file3.txt # "test3\n"
 ```
-git add -A
-git commit
+<!-- .element: class="fragment fade-up" -->
+<br>
+
+```
+[file / directory] [name]
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+file file0.txt
+file file1.txt
+file file2.txt
+file file3.txt
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+### How _ group blobs?
+```bash
+38143ad
+a5bce3f
+180cf83
+df6b0d2
+```
+<!-- .element: class="fragment fade-up" -->
+<br>
+
+```
+[blob / _] [SHA1]
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+blob 38143ad
+blob a5bce3f
+blob 180cf83
+blob df6b0d2
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+### Implementation
+
+```
+# in a git repository
+git add .
+git write-tree
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
+
+```
+f7c781e243742a9b392f5af7192b6b3e64940c9e
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="2"-->
+<br>
+```
+git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="3"-->
+```
+100644 blob 38143ad4a0fe2ab6ee53c2ef89a5d9e2bd9535da	file0.txt
+100644 blob a5bce3fd2565d8f458555a0c6f42d0504a848bd5	file1.txt
+100644 blob 180cf8328022becee9aaa2577a8f84ea2b9f3827	file2.txt
+100644 blob df6b0d2bcc76e6ec0fca20c227104a4f28bac41b	file3.txt
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="3"-->
+
+```
+[mode] [type] [SHA1] [name in FS]
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="4"-->
+
+
+### typeof f7c781e ?
+
+```
+git cat-file -t f7c781e243742a9b392f5af7192b6b3e64940c9e
+```
+
+## Tree
+<!-- .element: class="fragment fade-up" data-fragment-index="2" -->
+
+<img src="img/tree.jpg" style="width: 80%">
+<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
+
+
+### The graph 
+<img src="/img/internal-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+Note:
+```
+mkdir -p /tmp/demos/trees
+cd $_
+for i in {0..3}
+do
+echo "test$i" > file$i.txt
+done
+git init
+for i in {0..3}
+do
+git hash-object -w file$i.txt
+done
+git add .
+git write-tree
+echo "made some changes" >> file0.txt
+git add file0.txt
+git write-tree
 ```
 
 
-### What is a commit?
+### Let's change something
 
 ```
-git cat-file -t `git log --oneline | cut -d' ' -f  1`
-git cat-file -p `git log --oneline | cut -d' ' -f  1`
+git hash-object file0.txt
+```
+```
+38143ad4a0fe2ab6ee53c2ef89a5d9e2bd9535da
+```
+
+```
+echo "made some changes" >> file0.txt
+git hash-object file0.txt
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
+
+```
+fed3ffb24afa4fd86ffe990fc14c13b058b40f74
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
+<br>
+
+```
+git add file0.txt
+git write-tree
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="2"-->
+```
+00529ea520638e2148faab1ab0ede2208577bb74
+```
+<!-- .element: class="fragment fade-up" data-fragment-index="2"-->
+
+
+```
+git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
+```
+<pre><code data-noescape>100644 blob 38143ad4a0fe2ab6ee53c2ef89a5d9e2bd9535da	file0.txt
+<span class="fragment highlight-blue" data-fragment-index="1">100644 blob a5bce3fd2565d8f458555a0c6f42d0504a848bd5	file1.txt
+100644 blob 180cf8328022becee9aaa2577a8f84ea2b9f3827	file2.txt
+100644 blob df6b0d2bcc76e6ec0fca20c227104a4f28bac41b	file3.txt</span></code></pre>
+
+```
+git cat-file -p 00529ea520638e2148faab1ab0ede2208577bb74
+```
+
+<pre><code data-noescape>100644 blob fed3ffb24afa4fd86ffe990fc14c13b058b40f74	file0.txt
+<span class="fragment highlight-blue" data-fragment-index="1">100644 blob a5bce3fd2565d8f458555a0c6f42d0504a848bd5	file1.txt
+100644 blob 180cf8328022becee9aaa2577a8f84ea2b9f3827	file2.txt
+100644 blob df6b0d2bcc76e6ec0fca20c227104a4f28bac41b	file3.txt</span>
+</code></pre>
+
+
+### The graph (again)
+<img src="/img/internal-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+
+### The graph (again)
+<!-- .slide: data-transition="fade" -->
+<img src="/img/internal-graph-after-changes.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### The change 
+```bash
+f7c781e # state 0 - before "some changes"
+00529ea # state 1 - after "some changes"
+```
+
+<div>
+Given a <span class="fragment highlight-blue" data-fragment-index="2">single</span> state identifier:
+<ul>
+<div class="fragment highlight-green" data-fragment-index="3"><li>What is the current state?</li></div>
+<div class="fragment highlight-red" data-fragment-index="3"></li>
+<li>What changed? How it was before?</li>
+<li>When did it change?</li>
+<li>By whom?</li>
+<li>Why?</li>
+<div>
+</ul>
+</div>
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
+
+
+### detailed change-descriptor
+
+```
+current state: ?
+previous state: ?
+date: [timestamp / data ?]
+who: [name and some means of contact]
 ```
 
 
-### Blockchain?
+### Implementation
+## A commit
 
-> A blockchain,[1][2][3] originally block chain,[4][5] is a growing list of records, called blocks, which are linked using cryptography.[1][6]~ [Wiki](https://en.wikipedia.org/wiki/Blockchain)
+```bash
+# in an empty git repo
+./do_some_stuff.sh
+git add .
+git commit -m "Initial commit"
+```
+
+```bash
+# caution! hashes may vary
+f0c690a67d846529202c75691ef725e8a584440f
+```
+
+```
+./do_some_changes.sh
+git add .
+git commit -m "Made changes"
+```
+
+```bash
+# caution! hashes may vary
+6291a11c4a94b59c5737009ad0c965cab855736b
+```
+
+```
+git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
+```
 
 
-### What is a tree?
+### The change revisited
+<pre style="width: 110%"><code class="nohighlight" style="background: #3f3f3f" data-noescape><span class="fragment highlight-current-blue" data-fragment-index="1">tree 00529ea520638e2148faab1ab0ede2208577bb74</span>
+<span class="fragment highlight-current-blue" data-fragment-index="2">parent f0c690a67d846529202c75691ef725e8a584440f</span>
+<span class="fragment highlight-current-blue" data-fragment-index="4">author Olgierd "Allgreed" Kasprowicz &lt;olixem@gmail.com&gt;</span> <span class="fragment highlight-current-blue" data-fragment-index="3">1534465200 +0200</span>
+<span class="fragment highlight-current-blue" data-fragment-index="4">committer Olgierd "Allgreed" Kasprowicz &lt;olixem@gmail.com&gt;</span> <span class="fragment highlight-current-blue" data-fragment-index="3">1534465200 +0200</span>
 
-- Directory representation inside git
-- Can be nested
+<span class="fragment highlight-current-blue" data-fragment-index="5">Made changes</span></code></pre>
+
+<ul>
+<li><span class="fragment highlight-green" data-fragment-index="1">What is the current state?</span></li>
+<li><span class="fragment highlight-green" data-fragment-index="2">How it was before?</li>
+<li><span class="fragment highlight-green" data-fragment-index="3">When did it change?</li>
+<li><span class="fragment highlight-green" data-fragment-index="4">By whom?</li>
+<li><span class="fragment highlight-green" data-fragment-index="5">Why?</li>
+</ul>
 
 
-### Optimization
+### Recap - Git objects db
 
-- Two files with the same content
-
-
-### Recap - type in git DB
-
-- Blobs
-- Trees
-- Commits<br>
+- **Blobs**
+- **Trees**
+- **Commits**<br>
 
 and
 
-- <span style="text-decoration: underline">Annotated tags</span>
+- <span>??? - misterious, yet not super relevant type</span>
 
 
 
 ## Revision control system
+
+- **HEAD**: Mutable pointer to [ commit | ref ]
+
+Stored in `.git/HEAD`
+<hr>
 
 - **Tag**: Constant pointer to a commit
 - **Branch**: Mutable pointer to a commit
 
 ref = [ branch | tag ]
 
-- **HEAD**: Mutable pointer to [ commit | ref ]
-
-Stored in `.git/refs/` and `.git/HEAD`
+Stored in `.git/refs/`
 
 
-### Merge and conflicts
+### Merges
 
 - **Merge**: integrating changes between branches
-- **Merge conflict**: Is a condition where human intervention is required to do the above
 - **Fast-forward merge**: Merging without a merge commit
-- **Rebase**: integrate changes from 2 branches by "replaying" commits
 
 
 
@@ -219,29 +463,39 @@ Stored in `.git/refs/` and `.git/HEAD`
 
 ### Network
 - Connected via `remotes`
-- Syncs unique objects, mostly immutable
 
-
-### Equal clones
-- All repos made equal (technically) - clones
-- Repo has [eventually consistent] information about very remote
-- Social aspect - distributed vs. decentralized
+Sync:
+- "Just-copy-missing" for objects
+- Namespace refs
 
 
 ### Off-line
 - Remote references are stored locally just like local branches
-- `.git/refs/remotes/origin/HEAD`
+- `.git/refs/remotes/[remote]/*`
 - `packed-refs`
 
 
+### Equal clones
+- All repos made equal (technically) - clones
+- Repo has [eventually consistent] information about every remote
 
-## Podziękował!
-Fin części 0.
+
+
+### 4th type - Annotated Tag
+
+
+### Blockchain?
+
+> Blockchain - a growing list of records, called <b>blocks</b>, which are linked using cryptography.<br>~ [Wiki](https://en.wikipedia.org/wiki/Blockchain)
+
+<br>
+> Git - a growing list of records, called <b>commits</b>, which are linked using cryptography.
 
 
 ## Sources
 
-- Paolo Perrotta - How Git Works? (Pluralsight)
+- [Paolo Perrotta - How Git Works? (Pluralsight)](https://app.pluralsight.com/library/courses/how-git-works/)
 - [Meme](https://twitter.com/agnoster/status/44636629423497217)
 - [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
 - [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
+- [More about git trees](https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object)
