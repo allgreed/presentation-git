@@ -252,16 +252,8 @@ git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
 git cat-file -t f7c781e243742a9b392f5af7192b6b3e64940c9e
 ```
 
-## Tree
+<img src="/img/internal-graph.png" style="margin: 0; margin-top: -5%; box-shadow: none; border: 0; background: transparent">
 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
-
-<img src="img/tree.jpg" style="width: 80%">
-<!-- .element: class="fragment fade-up" data-fragment-index="1" -->
-
-
-### The graph 
-<img src="/img/internal-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
-<!-- .slide: data-transition="fade" -->
 
 Note:
 ```
@@ -438,10 +430,20 @@ and
 
 ## Revision control system
 
-- **HEAD**: Mutable pointer to [ commit | ref ]
+
+### HEAD
+
+<img src="img/detached_head.jpg" style="width: 35%">
+
+
+Mutable pointer to [ commit | _ ]
 
 Stored in `.git/HEAD`
-<hr>
+
+> Detached HEAD: HEAD pointing at a commit
+
+
+### Refs
 
 - **Tag**: Constant pointer to a commit
 - **Branch**: Mutable pointer to a commit
@@ -451,10 +453,20 @@ ref = [ branch | tag ]
 Stored in `.git/refs/`
 
 
+### HEAD recap
+
+Mutable pointer to [ commit | ref ]
+
+
+### Demo
+
+
 ### Merges
 
 - **Merge**: integrating changes between branches
 - **Fast-forward merge**: Merging without a merge commit
+
+### Rebases
 
 
 
