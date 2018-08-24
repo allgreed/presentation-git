@@ -433,30 +433,38 @@ and
 
 ### HEAD
 
-<img src="img/detached_head.jpg" style="width: 35%">
+<img src="img/detached_head.jpg" style="width: 50%">
+
+<b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ commit | _ ]<br>
 
 
-Mutable pointer to [ commit | _ ]
+<!-- .slide: data-transition="fade" -->
+<img src="img/head-commit-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
-Stored in `.git/HEAD`
 
-> Detached HEAD: HEAD pointing at a commit
+<!-- .slide: data-transition="fade" -->
+<img src="img/head-commit-graph-with-tree.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+<!-- .slide: data-transition="fade" -->
+<img src="img/head-commit-graph-with-tree-more-arrows.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### Refs
-
+<!-- Tu skończyłem -->
 - **Tag**: Constant pointer to a commit
 - **Branch**: Mutable pointer to a commit
 
 ref = [ branch | tag ]
 
-Stored in `.git/refs/`
-
 
 ### HEAD recap
 
+HEAD - Stored in `.git/HEAD`<br>
 Mutable pointer to [ commit | ref ]
+refs - Stored in `.git/refs/`
 
+> Detached HEAD: HEAD pointing at a commit
 
 ### Demo
 
