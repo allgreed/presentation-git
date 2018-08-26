@@ -2,10 +2,11 @@ Better graph drawings
 
 ===================
 
-4/9 - better highlighting
-4/12 - change, not state ?
+4/14 - add animation
 
 ===================
+
+
 - improve the HEAD section
 - improve the refs section
 - provide a DEMO for them (with showing git contents)
@@ -19,6 +20,7 @@ Better graph drawings
 http://eagain.net/articles/git-for-computer-scientists/
 
 ===================
+before 4/2 - add a demo on how it was created
 
 https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081

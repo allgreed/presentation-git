@@ -307,7 +307,7 @@ git write-tree
 ```
 git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
 ```
-<pre><code data-noescape>100644 blob 38143ad4a0fe2ab6ee53c2ef89a5d9e2bd9535da	file0.txt
+<pre><code class="nohighlight" style="background: #3f3f3f" data-noescape><span class="fragment highlight-red" data-fragment-index="1">100644 blob 38143ad4a0fe2ab6ee53c2ef89a5d9e2bd9535da	file0.txt</span>
 <span class="fragment highlight-blue" data-fragment-index="1">100644 blob a5bce3fd2565d8f458555a0c6f42d0504a848bd5	file1.txt
 100644 blob 180cf8328022becee9aaa2577a8f84ea2b9f3827	file2.txt
 100644 blob df6b0d2bcc76e6ec0fca20c227104a4f28bac41b	file3.txt</span></code></pre>
@@ -316,7 +316,7 @@ git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
 git cat-file -p 00529ea520638e2148faab1ab0ede2208577bb74
 ```
 
-<pre><code data-noescape>100644 blob fed3ffb24afa4fd86ffe990fc14c13b058b40f74	file0.txt
+<pre><code class="nohighlight" style="background: #3f3f3f" data-noescape><span class="fragment highlight-green" data-fragment-index="1">100644 blob fed3ffb24afa4fd86ffe990fc14c13b058b40f74	file0.txt</span>
 <span class="fragment highlight-blue" data-fragment-index="1">100644 blob a5bce3fd2565d8f458555a0c6f42d0504a848bd5	file1.txt
 100644 blob 180cf8328022becee9aaa2577a8f84ea2b9f3827	file2.txt
 100644 blob df6b0d2bcc76e6ec0fca20c227104a4f28bac41b	file3.txt</span>
@@ -340,28 +340,18 @@ f7c781e # state 0 - before "some changes"
 ```
 
 <div>
-Given a <span class="fragment highlight-blue" data-fragment-index="2">single</span> state identifier:
+Given a <span class="fragment highlight-blue" data-fragment-index="2">single</span> identifier:
 <ul>
-<div class="fragment highlight-green" data-fragment-index="3"><li>What is the current state?</li></div>
-<div class="fragment highlight-red" data-fragment-index="3"></li>
-<li>What changed? How it was before?</li>
-<li>When did it change?</li>
-<li>By whom?</li>
-<li>Why?</li>
-<div>
+<li><span class="fragment highlight-green" data-fragment-index="3">What is the current state?</span></li>
+<li><span class="fragment highlight-red" data-fragment-index="4">How it was before?</li>
+<li><span class="fragment highlight-red" data-fragment-index="5">When did it change?</li>
+<li><span class="fragment highlight-red" data-fragment-index="6">By whom?</li>
+<li><span class="fragment highlight-red" data-fragment-index="7">Why?</li>
 </ul>
-</div>
 <!-- .element: class="fragment fade-up" data-fragment-index="1"-->
 
 
 ### detailed change-descriptor
-
-```
-current state: ?
-previous state: ?
-date: [timestamp / data ?]
-who: [name and some means of contact]
-```
 
 
 ### Implementation
@@ -390,12 +380,12 @@ git commit -m "Made changes"
 6291a11c4a94b59c5737009ad0c965cab855736b
 ```
 
+
+### The change revisited
 ```
 git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 ```
-
-
-### The change revisited
+<!-- .element style="width: 110%" -->
 <pre style="width: 110%"><code class="nohighlight" style="background: #3f3f3f" data-noescape><span class="fragment highlight-current-blue" data-fragment-index="1">tree 00529ea520638e2148faab1ab0ede2208577bb74</span>
 <span class="fragment highlight-current-blue" data-fragment-index="2">parent f0c690a67d846529202c75691ef725e8a584440f</span>
 <span class="fragment highlight-current-blue" data-fragment-index="4">author Olgierd "Allgreed" Kasprowicz &lt;olixem@gmail.com&gt;</span> <span class="fragment highlight-current-blue" data-fragment-index="3">1534465200 +0200</span>
