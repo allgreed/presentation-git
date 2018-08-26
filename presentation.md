@@ -35,6 +35,14 @@
 <img src="/img/supported-languages.jpg">
 
 
+## Gui iz 4 n00bz
+<img src="img/gui-vs-cli.png" style="width: 50%">
+- Learning: <s>GUI</s> CLI
+- Work: whatever gets shit done
+
+[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
+
+
 ## Roadmap
 
 - [Think like git](/think-like-git.html)

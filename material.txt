@@ -1,3 +1,11 @@
+Better graph drawings
+
+===================
+
+4/9 - better highlighting
+4/12 - change, not state ?
+
+===================
 - improve the HEAD section
 - improve the refs section
 - provide a DEMO for them (with showing git contents)
@@ -8,9 +16,15 @@
 
 - recap of entire `.git` directory contents
 
+http://eagain.net/articles/git-for-computer-scientists/
+
 ===================
 
-http://eagain.net/articles/git-for-computer-scientists/
+https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
+https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
+https://stackoverflow.com/questions/10434326/hash-collision-in-git
+
+===================
 
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
 
@@ -20,6 +34,17 @@ http://eagain.net/articles/git-for-computer-scientists/
 
 https://git-scm.com/docs/gitrepository-layout
 
+===================
+
+Improve intro
+
+===================
+
+
+
+
+
+===================
 ===================
 
 - encode the email in the contact
@@ -39,11 +64,13 @@ https://git-scm.com/docs/gitrepository-layout
 
 - mniej aliasów
 
-
-https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
-https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
-https://stackoverflow.com/questions/10434326/hash-collision-in-git
+https://i.pinimg.com/originals/1f/8e/d5/1f8ed5374c558cafc22dccac9a7a438f.jpg
+https://starecat.com/content/wp-content/uploads/essential-hoping-this-works-o-rly-book-cover.jpg
 
 ====================
+====================
+https://i.redd.it/dsdbmyoirso01.jpg
+http://i.imgur.com/0blLD7H.jpg
 
 - Social aspect - distributed vs. decentralized
+

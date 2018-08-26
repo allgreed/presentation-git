@@ -3,20 +3,16 @@
 
 
 
-## Myths
-<img src="/img/mythbusters.jpg">
+## Foreword
 
 
-## Git is magic
+<img src="img/xkcd-git-meme.png" style="width: 45%">
+
+
 <img src="img/git-gets-easy.png" style="width: 200%">
 
 
-## Gui iz 4 n00bz
-<img src="img/gui-vs-cli.png" style="width: 50%">
-- Learning: <s>GUI</s> CLI
-- Work: whatever gets shit done
-
-[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
+<img src="img/linus.jpg" style="width: 200%">
 
 
 
