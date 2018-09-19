@@ -1,26 +1,25 @@
-Better graph drawings
+- improve the first git objects db recap:
+    - image ?
+    - table ?
 
 ===================
 
-4/14 - add animation
-
-===================
-
-
+- do a recap from previous section
 - improve the HEAD section
 - improve the refs section
 - provide a DEMO for them (with showing git contents)
 
-- improve the first git objects db recap:
-    - image
-    - table
+===================
+
+- do a recap from previous section
+
+===================
 
 - recap of entire `.git` directory contents
 
 http://eagain.net/articles/git-for-computer-scientists/
 
 ===================
-before 4/2 - add a demo on how it was created
 
 https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
@@ -38,22 +37,17 @@ https://git-scm.com/docs/gitrepository-layout
 
 ===================
 
-Improve intro
-
-===================
-
-
-
-
-
-===================
-===================
-
 - encode the email in the contact
 
 - README.md -> you can just view presentation.md and coresponding presentation files
 
+
+
+
 ===================
+===================
+
+
 
 - rozwinąć dobre commity
 - przykład (teraz i po toolsach): stage, verify, document

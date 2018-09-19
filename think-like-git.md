@@ -152,6 +152,18 @@ git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 <img src="/img/blob-file.jpg">
 
 
+### Demo
+```
+mkdir -p /tmp/demos/trees
+cd $_
+for i in {0..3}; do echo "test$i" > file$i.txt; done
+ls
+git init
+for i in {0..3}; do git hash-object -w file$i.txt | head -c 7; echo; done
+```
+<!-- .element: style="width: 100%" -->
+
+
 ### What we already have
 <img src="/img/bunch-of-blobs.jpg">
 
@@ -250,26 +262,6 @@ git cat-file -t f7c781e243742a9b392f5af7192b6b3e64940c9e
 
 <img src="/img/tree.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
-
-Note:
-```
-mkdir -p /tmp/demos/trees
-cd $_
-for i in {0..3}
-do
-echo "test$i" > file$i.txt
-done
-git init
-for i in {0..3}
-do
-git hash-object -w file$i.txt
-done
-git add .
-git write-tree
-echo "made some changes" >> file0.txt
-git add file0.txt
-git write-tree
-```
 
 
 ### Let's change something
