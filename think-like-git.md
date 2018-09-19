@@ -248,7 +248,7 @@ git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
 git cat-file -t f7c781e243742a9b392f5af7192b6b3e64940c9e
 ```
 
-<img src="/img/internal-graph.png" style="margin: 0; margin-top: -5%; box-shadow: none; border: 0; background: transparent">
+<img src="/img/tree.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 <!-- .element: class="fragment fade-up" data-fragment-index="2" -->
 
 Note:
@@ -324,13 +324,13 @@ git cat-file -p 00529ea520638e2148faab1ab0ede2208577bb74
 
 
 ### The graph (again)
-<img src="/img/internal-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<img src="/img/tree-before.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 <!-- .slide: data-transition="fade" -->
 
 
 ### The graph (again)
 <!-- .slide: data-transition="fade" -->
-<img src="/img/internal-graph-after-changes.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<img src="/img/tree-after.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### The change 
@@ -351,34 +351,36 @@ Given a <span class="fragment highlight-blue" data-fragment-index="2">single</sp
 <!-- .element: class="fragment fade-up" data-fragment-index="1"-->
 
 
-### detailed change-descriptor
-
-
 ### Implementation
 ## A commit
 
 ```bash
 # in an empty git repo
-./do_some_stuff.sh
+
+... # do some stuff
 git add .
 git commit -m "Initial commit"
 ```
+<!-- .element: class="fragment fade-up" data-fragment-index="1"-->
 
 ```bash
 # caution! hashes may vary
 f0c690a67d846529202c75691ef725e8a584440f
 ```
+<!-- .element: class="fragment fade-up" data-fragment-index="2"-->
 
 ```
-./do_some_changes.sh
+...
 git add .
 git commit -m "Made changes"
 ```
+<!-- .element: class="fragment fade-up" data-fragment-index="3"-->
 
 ```bash
 # caution! hashes may vary
 6291a11c4a94b59c5737009ad0c965cab855736b
 ```
+<!-- .element: class="fragment fade-up" data-fragment-index="4"-->
 
 
 ### The change revisited
