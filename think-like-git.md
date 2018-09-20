@@ -396,18 +396,6 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 </ul>
 
 
-### Recap - Git objects db
-
-- **Blobs**
-- **Trees**
-- **Commits**<br>
-
-and
-
-- <span>??? - misterious, yet not super relevant type</span>
-
-
-
 ## Revision control system
 
 

@@ -1,10 +1,5 @@
-- improve the first git objects db recap:
-    - image ?
-    - table ?
-
-===================
-
 - do a recap from previous section
+    - doubly-nesteted tree with commit-chain (trees and blobs at lower opacity)
 - improve the HEAD section
 - improve the refs section
 - provide a DEMO for them (with showing git contents)
@@ -15,9 +10,11 @@
 
 ===================
 
-- recap of entire `.git` directory contents
 
+- recap of entire git mental model (and git db)
 http://eagain.net/articles/git-for-computer-scientists/
+
+- recap of entire `.git` directory contents
 
 ===================
 
