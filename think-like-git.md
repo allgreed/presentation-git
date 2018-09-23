@@ -410,6 +410,11 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 - Operate on thoose groups
 
 
+## Before we begin
+<img src="/img/commit-state.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+<!-- tu skończyłem -->
 ### HEAD
 
 <img src="img/detached_head.jpg" style="width: 50%">
