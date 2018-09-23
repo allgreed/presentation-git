@@ -1,7 +1,11 @@
-- do a recap from previous section
-    - doubly-nesteted tree with commit-chain (trees and blobs at lower opacity)
-- improve the HEAD section
+- tell how a commit can meaningfully represent history
+
 - improve the refs section
+    - name particular commits
+    - group related changes (introducing a proxy) [everything can be solved with a layer of indirection xD]
+
+- improve the HEAD section [just a tech thing - how to map repository to fs]
+
 - provide a DEMO for them (with showing git contents)
 
 ===================

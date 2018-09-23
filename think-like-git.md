@@ -401,21 +401,13 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 ### What we already know
-
-
-### Demo
-```
-mkdir -p /tmp/demos/refs
-cd $_
-```
-<!-- .element: style="width: 100%" -->
-
-
-### What we already have
 <img src="/img/vcs-recap.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### What we want
+- Name important points in time
+- Group related changes
+- Operate on thoose groups
 
 
 ### HEAD
