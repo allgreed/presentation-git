@@ -1,22 +1,28 @@
 - improve the refs section
-    - name particular commits [1]
     - group related changes (introducing a proxy) [everything can be solved with a layer of indirection xD]
 
 - improve the HEAD section [just a tech thing - how to map repository to fs]
 
 - provide a DEMO for them (with showing git contents)
 
+
 ===================
 
 - do a recap from previous section
+- prettify this shit
 
 ===================
 
+- operations on changes groups
+- więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
+
+===================
 
 - recap of entire git mental model (and git db)
 http://eagain.net/articles/git-for-computer-scientists/
 
 - recap of entire `.git` directory contents
+https://git-scm.com/docs/gitrepository-layout
 
 ===================
 
@@ -26,14 +32,13 @@ https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
 ===================
 
-- więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
-
-===================
-
 - odzippowywanie treści skompresowanych przez gita
 
-https://git-scm.com/docs/gitrepository-layout
 
+
+
+
+===================
 ===================
 
 - encode the email in the contact

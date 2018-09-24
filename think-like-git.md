@@ -406,8 +406,7 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 ### What we want
 - Marking special points in time
-- Group related changes
-- Operate on thoose groups
+- Grouping related changes
 
 
 ### Before we begin
@@ -415,10 +414,50 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 ### Marking special points in time
-<!-- zdjęcie jakiejś historycznej bitwy -->
-<!-- tagowanie -->
-<!-- pokazówka, że tagiem można jako commitem - np. git show -->
+<img src="/img/special-points-in-time.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
+
+### Tag
+
+```
+mkdir -p /tmp/demos/tag
+cd $_
+echo "Eminem" > rappers.txt
+git init
+git add --all
+git commit -m "Add Marshall Mathers"
+COMMIT_HASH=`git log --oneline | cut -f 1 -d' '`
+```
+
+```
+git show $COMMIT_HASH
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
+...
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+git tag slim-shady $COMMIT_HASH
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+git show slim-shady
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
+...
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+### Grouping related changes
 <!-- tu skończyłem -->
 
 
