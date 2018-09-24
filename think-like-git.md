@@ -406,7 +406,7 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 ### What we want
 - Marking special points in time
-- Grouping related changes
+- Separating groups of changes
 
 
 ### Before we begin
@@ -457,7 +457,12 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 <!-- .element: class="fragment fade-up" -->
 
 
-### Grouping related changes
+### Separating groups of changes
+<img src="/img/linear-commits.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+<img src="/img/branched-commits.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .element: class="fragment fade-in" -->
+
 <!-- tu skończyłem -->
 
 

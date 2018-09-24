@@ -1,5 +1,9 @@
 - improve the refs section
     - group related changes (introducing a proxy) [everything can be solved with a layer of indirection xD]
+        - sets
+        - reduce sets to pointers (since they can be deduced)
+    - how refs works
+    - placeholder for diffs, merges and rebases
 
 - improve the HEAD section [just a tech thing - how to map repository to fs]
 
