@@ -1,7 +1,5 @@
-- tell how a commit can meaningfully represent history
-
 - improve the refs section
-    - name particular commits
+    - name particular commits [1]
     - group related changes (introducing a proxy) [everything can be solved with a layer of indirection xD]
 
 - improve the HEAD section [just a tech thing - how to map repository to fs]
