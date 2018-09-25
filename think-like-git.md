@@ -463,9 +463,14 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 <img src="/img/branched-commits.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 <!-- .element: class="fragment fade-in" -->
 
+
+<img src="/img/commit-sets.png" style="width: 70%; margin: 0; margin-top: -4%; box-shadow: none; border: 0; background: transparent">
+
+<img src="/img/reduced-sets.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .element: class="fragment fade-in" -->
+
+
 <!-- tu skończyłem -->
-
-
 ### HEAD
 
 <img src="img/detached_head.jpg" style="width: 50%">

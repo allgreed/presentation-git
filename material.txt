@@ -1,7 +1,5 @@
 - improve the refs section
-    - group related changes (introducing a proxy) [everything can be solved with a layer of indirection xD]
-        - sets
-        - reduce sets to pointers (since they can be deduced)
+    - branch demo ???
     - how refs works
     - placeholder for diffs, merges and rebases
 
@@ -9,11 +7,15 @@
 
 - provide a DEMO for them (with showing git contents)
 
-
 ===================
 
 - do a recap from previous section
 - prettify this shit
+
+===================
+
+- move annotated tag into revision controll system
+- move blockchain into stupid content tracker
 
 ===================
 
