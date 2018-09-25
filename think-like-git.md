@@ -405,12 +405,41 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 ### What we want
+- Reviewing particular version
 - Marking special points in time
 - Separating groups of changes
 
 
 ### Before we begin
 <img src="/img/commit-state.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Reviewing particular version
+**HEAD**<br>
+<img src="img/headtail.jpg">
+
+<b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ **commit** | **_** ]<br>
+
+
+### Demo
+```
+mkdir -p /tmp/demos/head-commit
+cd $_
+echo "This is no. 0 version of this file" > whatever.txt
+git init
+git add --all
+git commit -m "1"
+echo "2" > whatever.txt
+git init
+git add --all
+git commit -m "1"
+1_COMMIT_HASH=`git log --oneline | head -n 1 | cut -f 1 -d' '`
+2_COMMIT_HASH=`git log --oneline | tail -n 1 | cut -f 1 -d' '`
+git checkout 1_COMMIT_HASH
+cat whatever.txt
+git checkout 2_COMMIT_HASH
+cat whatever.txt
+```
 
 
 ### Marking special points in time
@@ -422,10 +451,10 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 ```
 mkdir -p /tmp/demos/tag
 cd $_
-echo "Eminem" > rappers.txt
+echo "Marshall Mathers" > rappers.txt
 git init
 git add --all
-git commit -m "Add Marshall Mathers"
+git commit -m "Add Eminem"
 COMMIT_HASH=`git log --oneline | cut -f 1 -d' '`
 ```
 
@@ -470,24 +499,17 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 <!-- .element: class="fragment fade-in" -->
 
 
+### Demo
+
+
+
+
 <!-- tu skończyłem -->
 ### HEAD
 
 <img src="img/detached_head.jpg" style="width: 50%">
 
-<b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ commit | _ ]<br>
-
-
-<!-- .slide: data-transition="fade" -->
-<img src="img/head-commit-graph.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
-
-
-<!-- .slide: data-transition="fade" -->
-<img src="img/head-commit-graph-with-tree.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
-
-
-<!-- .slide: data-transition="fade" -->
-<img src="img/head-commit-graph-with-tree-more-arrows.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ **commit** | **_** ]<br>
 
 
 ### Refs

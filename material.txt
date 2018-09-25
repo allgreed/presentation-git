@@ -1,11 +1,12 @@
+- mapping repository to fs
+- head -- img
+
 - improve the refs section
     - branch demo ???
-    - how refs works
     - placeholder for diffs, merges and rebases
+    - how refs works
 
-- improve the HEAD section [just a tech thing - how to map repository to fs]
-
-- provide a DEMO for them (with showing git contents)
+- revisit HEAD section
 
 ===================
 
