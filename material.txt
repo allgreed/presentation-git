@@ -1,19 +1,10 @@
-
-- change change github.com to github icon
-
-- add goback link at the end of think-like-git
-
-===================
-
-- mapping repository to fs
-- head -- img
-
 - improve the refs section
     - branch demo ???
-    - placeholder for diffs, merges and rebases
-    - how refs works
+    - how refs works (git folder demo)
 
-- revisit HEAD section
+- revisit HEAD section (img)
+
+- mention garbage collection
 
 ===================
 
@@ -22,13 +13,15 @@
 
 ===================
 
-- move annotated tag into revision controll system
 - move blockchain into stupid content tracker
+vcs - - bonus - marking very special points in time (annotated tags)
 
 ===================
 
 - operations on changes groups
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
+
+- garbage collection
 
 ===================
 
@@ -64,6 +57,9 @@ https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
 ===================
 ===================
+
+- index
+- reflog
 
 
 

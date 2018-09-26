@@ -415,7 +415,14 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 ### Reviewing particular version
-**HEAD**<br>
+<img src="/img/git-to-fs.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Implementation
+<img src="/img/headpointer.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### HEAD?
 <img src="img/headtail.jpg">
 
 <b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ **commit** | **_** ]<br>
@@ -425,21 +432,64 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 ```
 mkdir -p /tmp/demos/head-commit
 cd $_
+git init
+
 echo "This is no. 0 version of this file" > whatever.txt
-git init
 git add --all
-git commit -m "1"
-echo "2" > whatever.txt
-git init
+git commit -m "Version 0"
+
+echo "This is no. 1 version of this file" > whatever.txt
 git add --all
-git commit -m "1"
-1_COMMIT_HASH=`git log --oneline | head -n 1 | cut -f 1 -d' '`
-2_COMMIT_HASH=`git log --oneline | tail -n 1 | cut -f 1 -d' '`
-git checkout 1_COMMIT_HASH
-cat whatever.txt
-git checkout 2_COMMIT_HASH
-cat whatever.txt
+git commit -m "Version 1"
+
+ST_COMMIT_HASH=`git log --oneline --no-abbrev | tail -n 1 | cut -f 1 -d' '`
+ND_COMMIT_HASH=`git log --oneline --no-abbrev | head -n 1 | cut -f 1 -d' '`
 ```
+<!-- .element style="width: 110%" -->
+
+
+```
+$ echo First commit: $ST_COMMIT_HASH
+First commit: bd43d4bc170eb2186cbecdcd1940c16f1b5abf44
+
+$ echo Second commit: $ND_COMMIT_HASH
+Second commit: 17b80d31a198622d9b4dd7bbdea98a72f137947b
+```
+
+```
+$ git log
+commit 17b80d31a198622d9b4dd7bbdea98a72f137947b
+Author: Olgierd "Allgreed" Kasprowicz <olixem@gmail.com>
+Date:   Wed Sep 26 13:40:55 2018 +0200
+
+    Version 1
+
+commit bd43d4bc170eb2186cbecdcd1940c16f1b5abf44
+Author: Olgierd "Allgreed" Kasprowicz <olixem@gmail.com>
+Date:   Wed Sep 26 13:40:55 2018 +0200
+
+    Version 0
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+```
+$ git checkout $ST_COMMIT_HASH
+...
+$ cat whatever.txt
+This is no. 0 version of this file
+$ cat .git/HEAD
+bd43d4bc170eb2186cbecdcd1940c16f1b5abf44
+```
+```
+$ git checkout $ND_COMMIT_HASH
+...
+$ cat whatever.txt
+This is no. 1 version of this file
+$ cat .git/HEAD
+17b80d31a198622d9b4dd7bbdea98a72f137947b
+```
+<!-- .element: class="fragment fade-up" -->
 
 
 ### Marking special points in time
@@ -500,44 +550,37 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 
 
 ### Demo
+<!-- Tu skończyłem -->
 
 
-
-
-<!-- tu skończyłem -->
-### HEAD
-
-<img src="img/detached_head.jpg" style="width: 50%">
-
-<b style="text-decoration: underline">Unique per repo</b>, mutable pointer to [ **commit** | **_** ]<br>
 
 
 ### Refs
-<!-- Tu skończyłem -->
 - **Tag**: Constant pointer to a commit
 - **Branch**: Mutable pointer to a commit
 
 ref = [ branch | tag ]
 
+### HEAD (again)
 
-### HEAD recap
-
-HEAD - Stored in `.git/HEAD`<br>
-Mutable pointer to [ commit | ref ]
-refs - Stored in `.git/refs/`
-
-> Detached HEAD: HEAD pointing at a commit
-
-### Demo
+Unique per repo, mutable pointer to [ **commit** | _ = **ref** ]<br>
 
 
+## Detached HEAD
+<img src="img/detached_head.jpg" style="width: 50%; margin: 0">
+
+HEAD not attached to any ref
+
+
+### Separating groups of changes
+<!--
 ### Merges
 
 - **Merge**: integrating changes between branches
 - **Fast-forward merge**: Merging without a merge commit
 
 ### Rebases
-
+-->
 
 
 ## DVCS
@@ -573,6 +616,8 @@ Sync:
 <br>
 > Git - a growing list of records, called <b>commits</b>, which are linked using cryptography.
 
+
+- [Back to main presentation](/#/2)
 
 ## Sources
 
