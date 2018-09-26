@@ -1,5 +1,4 @@
 
-- change employer (freelance)
 - change change github.com to github icon
 
 - add goback link at the end of think-like-git

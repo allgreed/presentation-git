@@ -9,7 +9,7 @@
 
 ## 🤑
 <!-- .slide: data-background-color="black" -->
-<img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/just.png">
+<img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/freelance.png">
 <hr>
 ## ⌨
 <img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/hs.png">
