@@ -1,9 +1,3 @@
-- improve the refs section
-    - branch demo ???
-    - how refs works (git folder demo)
-
-- revisit HEAD section (img)
-
 - mention garbage collection
 
 ===================

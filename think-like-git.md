@@ -550,26 +550,96 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 
 
 ### Demo
-<!-- Tu skończyłem -->
+```
+mkdir -p /tmp/demos/branches
+cd $_
+git init
+
+echo "something" > whatever.txt
+git add --all
+git commit -m "Initial commit"
+```
+<!-- .element style="width: 110%" -->
+```
+git checkout -b bar-branch
+
+echo "bar" > bar
+git add --all
+git commit -m "bar"
+BAR_COMMIT=`git log --oneline --no-abbrev | head -n 1 | cut -f 1 -d' '`
+```
+<!-- .element style="width: 110%" class="fragment fade-up"-->
+```
+git checkout master
+
+echo "foo" > foo
+git add --all
+git commit -m "foo"
+FOO_COMMIT=`git log --oneline --no-abbrev | head -n 1 | cut -f 1 -d' '`
+```
+<!-- .element style="width: 110%" class="fragment fade-up"-->
 
 
+```
+$ git cat-file -p $BAR_COMMIT
+```
+<!-- .element style="width: 110%" -->
+
+<pre style="width: 110%" class="fragment fade-up" data-fragment-index="1"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape>tree de34bcdcdd2424f0f8ba924700add216dddcefba
+<span class="fragment highlight-current-blue" data-fragment-index="4">parent 32cb4bf58f8656e511812ccfe07eb6f87fb1c4f7</span>
+author Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1537973062 +0200
+committer Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1537973062 +0200
+
+bar</code></pre>
+
+```
+$ git cat-file -p $FOO_COMMIT
+```
+<!-- .element style="width: 110%" class="fragment fade-up" data-fragment-index="2"-->
+
+<pre style="width: 110%" class="fragment fade-up" data-fragment-index="3"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape>tree a1b176da0a03e655e9c03d864494d13d016672f9
+<span class="fragment highlight-current-blue" data-fragment-index="4">parent 32cb4bf58f8656e511812ccfe07eb6f87fb1c4f7</span>
+author Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1537973067 +0200
+committer Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1537973067 +0200
+
+foo</code></pre>
 
 
 ### Refs
+ref = [ branch | tag ]
+
 - **Tag**: Constant pointer to a commit
 - **Branch**: Mutable pointer to a commit
 
-ref = [ branch | tag ]
 
 ### HEAD (again)
 
-Unique per repo, mutable pointer to [ **commit** | _ = **ref** ]<br>
+Unique per repo, mutable pointer to [ **commit** | **ref** ]<br>
+
+<img src="/img/refhead.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Demo
+```
+mkdir -p /tmp/demos/refs
+cd $_
+git init
+echo "whatever" > really
+git add --all
+git commit -m "Initial commit"
+COMMIT_HASH=`git log --oneline | cut -f 1 -d' '`
+git tag my-tag $COMMIT_HASH
+ranger .git
+```
 
 
 ## Detached HEAD
 <img src="img/detached_head.jpg" style="width: 50%; margin: 0">
 
 HEAD not attached to any ref
+
+
+### I said garbadge collection before, right?
 
 
 ### Separating groups of changes
@@ -581,6 +651,7 @@ HEAD not attached to any ref
 
 ### Rebases
 -->
+
 
 
 ## DVCS
