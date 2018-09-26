@@ -1,3 +1,11 @@
+
+- change employer (freelance)
+- change change github.com to github icon
+
+- add goback link at the end of think-like-git
+
+===================
+
 - mapping repository to fs
 - head -- img
 
@@ -81,3 +89,4 @@ http://i.imgur.com/0blLD7H.jpg
 
 - Social aspect - distributed vs. decentralized
 
+- git crypt
