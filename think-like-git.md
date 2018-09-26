@@ -144,6 +144,12 @@ git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 <!-- .element: class="fragment fade-up" data-fragment-index="2"-->
 
 
+## Wait a sec...
+### We only add, but never delete...
+<!-- .element: class="fragment fade-in" -->
+<img src="/img/borgship.jpg" class="fragment fade-in" style="width: 60%; margin: 0">
+
+
 
 ## Stupid content tracker
 
@@ -639,7 +645,8 @@ ranger .git
 HEAD not attached to any ref
 
 
-### I said garbadge collection before, right?
+### I said garbage collection before, right?
+<img src="/img/gc.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### Separating groups of changes

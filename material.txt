@@ -1,7 +1,3 @@
-- mention garbage collection
-
-===================
-
 - do a recap from previous section
 - prettify this shit
 
