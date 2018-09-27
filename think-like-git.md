@@ -669,12 +669,24 @@ HEAD not attached to any ref
 
 
 ### What we want
+<img src="/img/network.jpeg" style="maring: 0;">
 
 
 ### Distributed vs Decentralized ?
 
-### Network
+
+### Unit of distribution
+<img src="/img/repo-notation.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Making connections
 - Connected via `remotes`
+
+
+
+
+
+
 
 Sync:
 - "Just-copy-missing" for objects
@@ -684,7 +696,6 @@ Sync:
 ### Off-line
 - Remote references are stored locally just like local branches
 - `.git/refs/remotes/[remote]/*`
-- `packed-refs`
 
 
 ### Equal clones
@@ -702,6 +713,7 @@ Sync:
 
 <br>
 > Git - a growing list of records, called <b>commits</b>, which are linked using cryptography.
+- `packed-refs`
 
 
 - [Back to main presentation](/#/2)

@@ -12,3 +12,4 @@ https://www.flickr.com/photos/double-m2/4083496285
 https://i.imgflip.com/xsdtv.jpg
 https://alvinalexander.com/images/fp-book/recursion/1-head-tail-init-last-learn-you-a-haskell.jpg
 http://i.pinimg.com/originals/e3/bf/60/e3bf60f3350c88e880146f8f6bd9b630.jpg
+https://proxy.duckduckgo.com/iur/?f=1&image_host=http%3A%2F%2Fimages.techhive.com%2Fimages%2Farticle%2F2014%2F12%2Fnetworked_globe-100537357-primary.idge.jpg&u=https://images.techhive.com/images/article/2014/12/networked_globe-100537357-primary.idge.jpg
