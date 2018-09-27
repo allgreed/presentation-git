@@ -1,5 +1,9 @@
-- do a recap from previous section
-- prettify this shit
+### Distributed vs Decentralized ?
+syncing:
+    - db
+    - refs & HEAD
+
+- note on equal clones
 
 ===================
 

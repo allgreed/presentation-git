@@ -680,10 +680,36 @@ HEAD not attached to any ref
 
 
 ### Making connections
-- Connected via `remotes`
+<img src="/img/remotes.png" style="box-shadow: none; border: 0; background: transparent">
+
+|  Name  	|                    URL                    	|
+|:------:	|:-----------------------------------------:	|
+|  mike  	|  git@example.com:mike/sample-project.git  	|
+| sylvia 	| git@example.com:sylvia/sample-project.git 	|
 
 
+### Demo
 
+```
+mkdir -p /tmp/demos/remotes
+cd $_
+git clone https://github.com/allgreed/presentation-git
+cd presentation-git
+cat .git/config
+```
+
+<pre class="fragment fade-up" data-fragment-index="3"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape>[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+<span class="fragment highlight-current-blue" data-fragment-index="4">[remote "origin"]
+	url = https://github.com/allgreed/presentation-git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+</span>
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master</code></pre>
 
 
 
