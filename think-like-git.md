@@ -25,7 +25,7 @@
 
 
 
-## Persistent map
+# Persistent map
 
 
 ### A map?
@@ -151,7 +151,7 @@ git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 
 
 
-## Stupid content tracker
+# Stupid content tracker
 
 
 ### What we already know
@@ -403,7 +403,7 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 
-## Revision control system
+# Revision control system
 
 
 ### What we already know
@@ -661,8 +661,17 @@ HEAD not attached to any ref
 
 
 
-## DVCS
+# DVCS
 
+
+### What we already know
+<img src="/img/dvcs-recap.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### What we want
+
+
+### Distributed vs Decentralized ?
 
 ### Network
 - Connected via `remotes`
