@@ -712,6 +712,40 @@ cat .git/config
 	merge = refs/heads/master</code></pre>
 
 
+## Git database sync
+<table style="width: 140%; margin-left: -20%">
+    <tr>
+        <th>Problem</th>
+        <th>Solution</th>
+    </tr>
+        <td><span class="fragment fade-up" data-fragment-index="1">what to send through the wire?</span></td>
+        <td><span class="fragment fade-up" data-fragment-index="2">immutability & cryptography</span></td>
+    <tr>
+    </tr>
+        <td><span class="fragment fade-up" data-fragment-index="3">how to ensure same state of both repos?</span></td>
+        <td><span class="fragment fade-up" data-fragment-index="4">immutability & cryptography</span></td>
+    <tr>
+    </tr>
+        <td><span class="fragment fade-up" data-fragment-index="5">how to maintain data integrity?</span></td>
+        <td><span class="fragment fade-up" data-fragment-index="6">immutability & cryptography</span></td>
+    <tr>
+</table>
+
+
+## Git database sync - process
+<img src="/img/db-sync-before.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+
+## Git database sync - process
+<img src="/img/db-sync-during.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+
+## Git database sync - process
+<img src="/img/db-sync-after.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
 
 
 Sync:

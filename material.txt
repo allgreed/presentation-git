@@ -1,6 +1,5 @@
 ### Distributed vs Decentralized ?
 syncing:
-    - db
     - refs & HEAD
 
 - note on equal clones
