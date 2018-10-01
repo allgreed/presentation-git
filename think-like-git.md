@@ -649,7 +649,7 @@ HEAD not attached to any ref
 <img src="/img/gc.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
-### Separating groups of changes
+### Operations on groups of changes
 <!--
 ### Merges
 
@@ -672,7 +672,26 @@ HEAD not attached to any ref
 <img src="/img/network.jpeg" style="maring: 0;">
 
 
-### Distributed vs Decentralized ?
+### Distributed vs Decentralized
+
+<blockquote class="fragment fade-out" data-fragment-index="1" style="position: absolute"><br>
+**Distributed system** - a system whose components are located on different networked computers, which then communicate and coordinate their actions by passing messages to one other. The components interact with one other in order to achieve a common goal. Yada yada, yada...
+<br><br>~ [Wikipedia/Distributed_computing](https://en.wikipedia.org/wiki/Distributed_computing)
+</blockquote>
+<blockquote class="fragment fade-in" style="position: absolute" data-fragment-index="1"><br>
+**Distributed system haiku**:
+<br> many computers
+<br> working with one another
+<br> over the network.
+<br><br>~ Me
+</blockquote>
+
+
+<img src="/img/distributed-vs-decentralized-original.png" style="width: 80%">
+<br><span class="fragment fade-in">Johansson A, Kisch P, Mirata M., 2005, <span class="fragment highlight-blue">Distributed economies</span> - A new engine for innovation</span>
+
+
+<img src="/img/distributed-vs-decentralized-mine.png" style="width: 60%">
 
 
 ### Unit of distribution

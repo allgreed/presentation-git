@@ -1,4 +1,5 @@
-### Distributed vs Decentralized ?
+- redo the table problem - solution
+
 syncing:
     - refs & HEAD
 
