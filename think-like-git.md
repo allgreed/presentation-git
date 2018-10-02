@@ -549,12 +549,6 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 <!-- .element: class="fragment fade-in" -->
 
 
-<img src="/img/commit-sets.png" style="width: 70%; margin: 0; margin-top: -4%; box-shadow: none; border: 0; background: transparent">
-
-<img src="/img/reduced-sets.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
-<!-- .element: class="fragment fade-in" -->
-
-
 ### Demo
 ```
 mkdir -p /tmp/demos/branches
@@ -611,6 +605,12 @@ committer Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1537973067 +0200
 foo</code></pre>
 
 
+<img src="/img/commit-sets.png" style="width: 70%; margin: 0; margin-top: -4%; box-shadow: none; border: 0; background: transparent">
+
+<img src="/img/reduced-sets.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .element: class="fragment fade-in" -->
+
+
 ### Refs
 ref = [ branch | tag ]
 
@@ -618,15 +618,8 @@ ref = [ branch | tag ]
 - **Branch**: Mutable pointer to a commit
 
 
-### HEAD (again)
-
-Unique per repo, mutable pointer to [ **commit** | **ref** ]<br>
-
-<img src="/img/refhead.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
-
-
 ### Demo
-```
+```bash
 mkdir -p /tmp/demos/refs
 cd $_
 git init
@@ -634,9 +627,17 @@ echo "whatever" > really
 git add --all
 git commit -m "Initial commit"
 COMMIT_HASH=`git log --oneline | cut -f 1 -d' '`
+# we allready have a branch
 git tag my-tag $COMMIT_HASH
 ranger .git
 ```
+
+
+### HEAD (again)
+
+Unique per repo, mutable pointer to [ **commit** | **ref** ]<br>
+
+<img src="/img/refhead.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ## Detached HEAD
@@ -732,43 +733,117 @@ cat .git/config
 
 
 ## Git database sync
-<table style="width: 140%; margin-left: -20%">
-    <tr>
-        <th>Problem</th>
-        <th>Solution</th>
-    </tr>
-        <td><span class="fragment fade-up" data-fragment-index="1">what to send through the wire?</span></td>
-        <td><span class="fragment fade-up" data-fragment-index="2">immutability & cryptography</span></td>
-    <tr>
-    </tr>
-        <td><span class="fragment fade-up" data-fragment-index="3">how to ensure same state of both repos?</span></td>
-        <td><span class="fragment fade-up" data-fragment-index="4">immutability & cryptography</span></td>
-    <tr>
-    </tr>
-        <td><span class="fragment fade-up" data-fragment-index="5">how to maintain data integrity?</span></td>
-        <td><span class="fragment fade-up" data-fragment-index="6">immutability & cryptography</span></td>
-    <tr>
-</table>
 
 
-## Git database sync - process
-<img src="/img/db-sync-before.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
-<!-- .slide: data-transition="fade" -->
+### Problem: how to ensure same state of entities?
+
+DB 0:
+<!-- .element class="fragment fade-up" data-fragment-index="1" -->
+```bash
+Id, Name, Clothing
+... # gazylion entries
+123456, Olgierd, T-shirt
+...
+```
+<!-- .element class="fragment fade-up" data-fragment-index="1" -->
+
+DB 1:
+<!-- .element class="fragment fade-up" data-fragment-index="1" -->
+```bash
+Id, Name, Possesion
+... # gazylion entries
+123456, Olgierd, T-shirt & hat
+...
+```
+<!-- .element class="fragment fade-up" data-fragment-index="1" -->
 
 
-## Git database sync - process
-<img src="/img/db-sync-during.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
-<!-- .slide: data-transition="fade" -->
+### Solution
+
+DB 0:
+```bash
+Id, Name, Clothing, Previous state
+...
+123456, Olgierd, T-shirt, null
+# 123457 missing
+...
+```
+
+DB 1:
+```bash
+Id, Name, Possesion, Previous state
+...
+123456, Olgierd, T-shirt, null
+123457, Olgierd, T-shirt & hat, 123456
+...
+```
 
 
-## Git database sync - process
-<img src="/img/db-sync-after.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
-<!-- .slide: data-transition="fade" -->
+### Problem: how to maintain data integrity?
 
+<img src="/img/haxxxor.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Solution
+
+```
+A[] <- B[A]
+```
+<!-- .element class="fragment fade-up" -->
+
+```
+A[] <- B[A] <- X[B] (malicious commit inejcted)
+```
+<!-- .element class="fragment fade-up" -->
+
+```
+A[] <- B[A] <- X[B] (D incoming)
+```
+<!-- .element class="fragment fade-up" -->
+
+```
+A[] <- B[A] <- X[B] | C[B] <- D[C] (C picked up)
+```
+<!-- .element class="fragment fade-up" -->
+<br>
+```
+A[] <- B[A] <- C[B] <- D[C] (X garbage collected over time)
+```
+<!-- .element class="fragment fade-up" -->
+
+
+### Problem: what to send through the wire?
+```
+f55dbd5 < LEFT-HEAD
+be0f7ba
+5582957 
+baf6a88 < RIGHT-HEAD
+```
+
+
+### Solution: dumb protocol
+<span style="display: block; text-align: right;" class="fragment fade-up">Yo man, r u HEAD @?</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">f55dbd5</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">be0f7ba
+<span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">5582957 
+<span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">baf6a88
+<span style="display: block; text-align: right;" class="fragment fade-up">K dude</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">Plox send f55dbd5 & be0f7ba & 5582957</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">Got it m8!
+
+
+### Solution: smart protocol
+<span style="display: block; text-align: right;" class="fragment fade-up">Yo man, r u HEAD @?</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">f55dbd5</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">Listen up I need f55dbd5</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">and I've got baf6a88</span>
+<span style="display: block; text-align: left;" class="fragment fade-up">Sending you: f55dbd5 &<br> be0f7ba & 5582957</span>
 
 
 Sync:
-- "Just-copy-missing" for objects
 - Namespace refs
 
 
@@ -804,3 +879,4 @@ Sync:
 - [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
 - [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
 - [More about git trees](https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object)
+- [Transfer protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)
