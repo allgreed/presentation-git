@@ -893,8 +893,15 @@ baf6a88 < RIGHT-HEAD
 
 
 ### Demo
-- `.git/refs/remotes/[remote]/*`
-- `packed-refs`
+```
+mkdir -p /tmp/demos/remotes
+cd $_
+git clone https://github.com/allgreed/presentation-git
+cd presentation-git
+# we're going to visit refs/remotes/...
+# and packed-refs
+ranger .git
+```
 
 
 ## Equal clones

@@ -1,7 +1,3 @@
-- note on equal clones
-
-- do the demo (mark x)
-
 - 6 / problem 3 - description to picture
 - 6 / problem 3 - color the conversation according to the description picture and commits with progressing colors (so that they can be easilly distinguished)
 
