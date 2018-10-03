@@ -402,6 +402,33 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 </ul>
 
 
+## Blockchain
+
+> <span style="text-decoration: underline">Blockchain</span> - a growing list of records, called <span style="text-decoration: underline">blocks</span>, which are linked using cryptography.<br>
+~ [Wikipedia/Blockchain](https://en.wikipedia.org/wiki/Blockchain)
+
+<!-- .element class="fragment fade-in" -->
+
+> <span style="text-decoration: underline">Git</span> - a growing list of records, called <span style="text-decoration: underline">commits</span>, which are linked using cryptography.
+
+<!-- .element class="fragment fade-in" -->
+
+
+> Each <span style="text-decoration: underline">block</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">block</span>, a timestamp, and transaction data<br>
+ ~ [Wikipedia/Blockchain](https://en.wikipedia.org/wiki/Blockchain)
+<br>
+
+<!-- .element -->
+
+> Each <span style="text-decoration: underline">commit</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">commit</span>, a timestamp, and transaction data
+
+<!-- .element class="fragment fade-in" -->
+
+
+## ??? :)
+> Blockchain was invented by <s>Satoshi Nakamoto</s> Linus Torwalds in <s>2008</s> 2005.
+
+
 
 # Revision control system
 
@@ -866,10 +893,8 @@ baf6a88 < RIGHT-HEAD
 
 
 ### Demo
-
-### Off-line
-- Remote references are stored locally just like local branches
 - `.git/refs/remotes/[remote]/*`
+- `packed-refs`
 
 
 ### Equal clones
@@ -881,13 +906,6 @@ baf6a88 < RIGHT-HEAD
 ### 4th type - Annotated Tag
 
 
-### Blockchain?
-
-> Blockchain - a growing list of records, called <b>blocks</b>, which are linked using cryptography.<br>~ [Wiki](https://en.wikipedia.org/wiki/Blockchain)
-
-<br>
-> Git - a growing list of records, called <b>commits</b>, which are linked using cryptography.
-- `packed-refs`
 
 
 - [Back to main presentation](/#/2)

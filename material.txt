@@ -7,7 +7,6 @@
 
 ===================
 
-- move blockchain into stupid content tracker
 vcs - - bonus - marking very special points in time (annotated tags)
 
 ===================
