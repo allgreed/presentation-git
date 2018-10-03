@@ -897,9 +897,8 @@ baf6a88 < RIGHT-HEAD
 - `packed-refs`
 
 
-### Equal clones
-- All repos made equal (technically) - clones
-- Repo has [eventually consistent] information about every remote
+## Equal clones
+<img src="/img/equal-clones.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 
