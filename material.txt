@@ -1,9 +1,9 @@
-syncing:
-    - refs & HEAD
-
 - note on equal clones
 
-- add pull and push on git-db-sync
+- do the demo (mark x)
+
+- 6 / problem 3 - description to picture
+- 6 / problem 3 - color the conversation according to the description picture and commits with progressing colors (so that they can be easilly distinguished)
 
 ===================
 
@@ -32,12 +32,6 @@ https://stackoverflow.com/questions/10434326/hash-collision-in-git
 ===================
 
 - odzippowywanie treści skompresowanych przez gita
-
-- 6 / problem 3 - description to picture
-- 6 / problem 3 - color the conversation according to the description picture and commits with progressing colors (so that they can be easilly distinguished)
-
-
-
 
 
 ===================

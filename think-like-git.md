@@ -843,9 +843,29 @@ baf6a88 < RIGHT-HEAD
 <span style="display: block; text-align: left;" class="fragment fade-up">Sending you: f55dbd5 &<br> be0f7ba & 5582957</span>
 
 
-Sync:
-- Namespace refs
+## Refs sync
 
+<img src="/img/sharedmutable.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+
+## Refs sync
+
+<img src="/img/sharedmutable-here.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+<!-- .slide: data-transition="fade" -->
+
+
+### Solution:
+> The Zen of Python, by Tim Peters
+><br>
+>...<br>
+>Namespaces are one honking great idea -- let's do more of those!
+
+
+<img src="/img/refs-sync.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+### Demo
 
 ### Off-line
 - Remote references are stored locally just like local branches
