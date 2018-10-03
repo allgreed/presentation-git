@@ -840,34 +840,29 @@ A[] <- B[A] <- C[B] <- D[C] (X garbage collected over time)
 
 
 ### Problem: what to send through the wire?
-```
-f55dbd5 < LEFT-HEAD
-be0f7ba
-5582957 
-baf6a88 < RIGHT-HEAD
-```
+<img src="/img/db-sync.png" style="width: 60%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### Solution: dumb protocol
 <span style="display: block; text-align: right;" class="fragment fade-up">Yo man, r u HEAD @?</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">f55dbd5</span>
+<span style="display: block; text-align: left; color: #D33682;" class="fragment fade-up">f55dbd5</span>
 <span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">be0f7ba
+<span style="display: block; text-align: left; color: #B58900;" class="fragment fade-up">be0f7ba</span>
 <span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">5582957 
+<span style="display: block; text-align: left; color: #2AA198;" class="fragment fade-up">5582957</span>
 <span style="display: block; text-align: right;" class="fragment fade-up">And what's before that?</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">baf6a88
+<span style="display: block; text-align: left; color: #268BD2;" class="fragment fade-up">baf6a88</span>
 <span style="display: block; text-align: right;" class="fragment fade-up">K dude</span>
-<span style="display: block; text-align: right;" class="fragment fade-up">Plox send f55dbd5 & be0f7ba & 5582957</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">Plox send <span style="color: #D33682;">f55dbd5</span> & <span style="color: #B58900;">be0f7ba</span> & <span style="color: #2AA198;">5582957</span></span>
 <span style="display: block; text-align: left;" class="fragment fade-up">Got it m8!
 
 
 ### Solution: smart protocol
 <span style="display: block; text-align: right;" class="fragment fade-up">Yo man, r u HEAD @?</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">f55dbd5</span>
-<span style="display: block; text-align: right;" class="fragment fade-up">Listen up I need f55dbd5</span>
-<span style="display: block; text-align: right;" class="fragment fade-up">and I've got baf6a88</span>
-<span style="display: block; text-align: left;" class="fragment fade-up">Sending you: f55dbd5 &<br> be0f7ba & 5582957</span>
+<span style="display: block; text-align: left; color: #D33682;" class="fragment fade-up">f55dbd5</span>
+<span style="display: block; text-align: right;" class="fragment fade-up">Listen up I need <span style="color: #D33682;">f55dbd5</span></span>
+<span style="display: block; text-align: right;" class="fragment fade-up">and I've got <span style="color: #268BD2;">baf6a88</span></span>
+<span style="display: block; text-align: left;" class="fragment fade-up">Sending you: <span style="color: #D33682;">f55dbd5</span> &<br> <span style="color: #B58900">be0f7ba</span> & <span style="color: #2AA198;">5582957</span></span>
 
 
 ## Refs sync
@@ -909,8 +904,10 @@ ranger .git
 
 
 
-### 4th type - Annotated Tag
+## Total recap
 
+
+<img src="/img/mental-model-recap.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 
@@ -924,3 +921,4 @@ ranger .git
 - [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
 - [More about git trees](https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object)
 - [Transfer protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)
+- [Superbrief git explanation](http://eagain.net/articles/git-for-computer-scientists/)

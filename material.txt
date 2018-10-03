@@ -1,19 +1,14 @@
-- 6 / problem 3 - description to picture
-- 6 / problem 3 - color the conversation according to the description picture and commits with progressing colors (so that they can be easilly distinguished)
-
-===================
-
 vcs - - bonus - marking very special points in time (annotated tags)
+### 4th type - Annotated Tag
 
 ===================
-
-- recap of entire git mental model (and git db)
-http://eagain.net/articles/git-for-computer-scientists/
 
 - recap of entire `.git` directory contents
 https://git-scm.com/docs/gitrepository-layout
 
 ===================
+
+- 6 / problem 2 - picturize
 
 - operations on changes groups
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
