@@ -133,6 +133,12 @@ ranger .git
 ```
 
 
+## Wait a sec...
+### We only add, but never delete...
+<!-- .element: class="fragment fade-in" -->
+<img src="/img/garbadge-colection.jpg" class="fragment fade-in" style="width: 60%; margin: 0">
+
+
 ### typeof 2511755 ?
 ```
 git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
@@ -142,12 +148,6 @@ git cat-file -t 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 <!-- .element: class="fragment fade-up" data-fragment-index="3"-->
 <img src="img/the_blob.jpg" style="width: 70%; margin: 0">
 <!-- .element: class="fragment fade-up" data-fragment-index="2"-->
-
-
-## Wait a sec...
-### We only add, but never delete...
-<!-- .element: class="fragment fade-in" -->
-<img src="/img/borgship.jpg" class="fragment fade-in" style="width: 60%; margin: 0">
 
 
 
@@ -904,11 +904,68 @@ ranger .git
 
 
 
-## Total recap
+# Total recap
 
 
 <img src="/img/mental-model-recap.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
+
+```bash
+│
+├── objects
+│   ├── 00
+│   ├── 01
+│   ├── 03
+│   ├── fd
+│   │   └── 61b9139fc7841d708dd234b3339a41dd14c501
+│   .
+│   .
+│   .
+│   ├── fe
+│   │   └── 38dc179eebcaf66d32e9b6184eda8a0ef9f126
+│   ├── info
+│   └── pack
+│
+```
+
+
+```bash
+│
+│── HEAD
+│── refs
+│   ├── heads
+│   │   └── master
+│   ├── remotes
+│   │   └── origin
+│   │       └── master
+│   └── tags
+│       └── sample_tag
+│
+```
+
+
+```bash
+│
+├── config
+│
+```
+
+```bash
+│
+├── index
+├── logs
+│   ├── ...
+│   .
+├── hooks
+│   
+├── COMMIT_EDITMSG
+├── FETCH_HEAD
+├── ORIG_HEAD
+├── description
+├── info
+├── branches # this is deprecated
+│
+```
 
 
 - [Back to main presentation](/#/2)
@@ -922,3 +979,4 @@ ranger .git
 - [More about git trees](https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object)
 - [Transfer protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)
 - [Superbrief git explanation](http://eagain.net/articles/git-for-computer-scientists/)
+- [Git directory layout](https://git-scm.com/docs/gitrepository-layout)
