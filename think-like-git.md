@@ -35,7 +35,7 @@
 
 ### Implementation
 
-- Keys: SHA1 of the content<br>
+- Keys: cryptohash (SHA1) of the content<br>
 - Values: the content
 
 <br>
@@ -48,6 +48,9 @@ $ echo "elorap" | git hash-object --stdin
 ```
 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
+<!-- .element: class="fragment fade-up" -->
+<br>
+<small>Sidenote: Git 2.19 (Q3 2018) replaces SHA1 with SHA256</small>
 <!-- .element: class="fragment fade-up" -->
 
 
@@ -215,7 +218,7 @@ df6b0d2
 <br>
 
 ```
-[blob / _] [SHA1]
+[blob / _] [cryptohash]
 ```
 <!-- .element: class="fragment fade-up" -->
 
@@ -255,7 +258,7 @@ git cat-file -p f7c781e243742a9b392f5af7192b6b3e64940c9e
 <!-- .element: class="fragment fade-up" data-fragment-index="3"-->
 
 ```
-[mode] [type] [SHA1] [name in FS]
+[mode] [type] [cryptohash] [name in FS]
 ```
 <!-- .element: class="fragment fade-up" data-fragment-index="4"-->
 
@@ -980,3 +983,4 @@ ranger .git
 - [Transfer protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)
 - [Superbrief git explanation](http://eagain.net/articles/git-for-computer-scientists/)
 - [Git directory layout](https://git-scm.com/docs/gitrepository-layout)
+- [SHA1 to SHA256 transition](https://github.com/git/git/blob/v2.19.0/Documentation/technical/hash-function-transition.txt)

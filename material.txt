@@ -3,19 +3,6 @@ vcs - - bonus - marking very special points in time (annotated tags)
 
 ===================
 
-- recap of entire `.git` directory contents
-https://git-scm.com/docs/gitrepository-layout
-
-===================
-
-- 6 / problem 2 - picturize
-
-- operations on changes groups
-- więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
-
-===================
-
-https://stackoverflow.com/questions/28159071/why-doesnt-git-use-more-modern-sha/47838703#47838703
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
 https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
@@ -23,6 +10,10 @@ https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
 - odzippowywanie treści skompresowanych przez gita
 
+- 6 / problem 2 - picturize
+
+- operations on changes groups
+- więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
 
 ===================
 ===================
