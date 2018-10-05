@@ -3,6 +3,10 @@ vcs - - bonus - marking very special points in time (annotated tags)
 
 ===================
 
+- chances of colisions (and don't worry about hackers yet, we're offline)
+
+- what if collision happens deliberately?
+
 https://stackoverflow.com/questions/9392365/how-would-git-handle-a-sha-1-collision-on-a-blob/34599081#34599081
 https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
@@ -14,6 +18,40 @@ https://stackoverflow.com/questions/10434326/hash-collision-in-git
 
 - operations on changes groups
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ===================
 ===================

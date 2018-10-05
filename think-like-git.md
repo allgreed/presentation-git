@@ -54,6 +54,28 @@ $ echo "elorap" | git hash-object --stdin
 <!-- .element: class="fragment fade-up" -->
 
 
+### What if?
+<img src="/img/colision.png" style="width: 70%">
+
+
+### Let's do some math
+
+`SHA-1 - 160 bits`<br>
+<!-- .element: class="fragment fade-up" -->
+`160bits ~ 10^48 possible combinations`<br>
+<!-- .element: class="fragment fade-up" -->
+`1 moon ~ 10^47 atoms`<br>
+<!-- .element: class="fragment fade-up" -->
+`10 moons ~ 10^48 atoms`<br>
+<!-- .element: class="fragment fade-up" -->
+`Birthday attack?`<br>
+<!-- .element: class="fragment fade-up" -->
+`5 * 10^25 commits -> 0.1% probability of collision`<br>
+<!-- .element: class="fragment fade-up" -->
+## NOPE
+<!-- .element: class="fragment fade-up" -->
+
+
 ### Details
 
 <br>
@@ -984,3 +1006,4 @@ ranger .git
 - [Superbrief git explanation](http://eagain.net/articles/git-for-computer-scientists/)
 - [Git directory layout](https://git-scm.com/docs/gitrepository-layout)
 - [SHA1 to SHA256 transition](https://github.com/git/git/blob/v2.19.0/Documentation/technical/hash-function-transition.txt)
+- [SHA1 collision in git](https://stackoverflow.com/a/23253149/9134286)
