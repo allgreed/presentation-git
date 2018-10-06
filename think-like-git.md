@@ -713,6 +713,38 @@ HEAD not attached to any ref
 -->
 
 
+### Bonus: marking <span style="text-decoration: underline">very</span> special points in time
+<img src="/img/annotated-tag.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+Sidenote: We've covered all of git database
+<!-- .element: class="fragment fade-up" -->
+
+
+### DEMO
+```bash
+mkdir -p /tmp/demos/annotated-tag
+cd $_
+git init
+echo "something" > whatever; git add -A; git commit -m "my commit"
+COMMIT_HASH=`git log --oneline --no-abbrev  | cut -f 1 -d' '`
+
+git tag my-tag $COMMIT_HASH -a -m "I can add message to tag!"
+
+TAG_REF_OBJECT=$(cat .git/refs/tags/my-tag)
+git cat-file -p $TAG_REF_OBJECT
+```
+<!-- .element style="width: 105%" -->
+```bash
+object 3df4a972dc34bd4775d6c9ca3a49481f6e420371 # this equals $COMMIT_HASH
+type commit
+tag my-tag
+tagger Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1538832910 +0200
+
+I can add message to tag!
+```
+<!-- .element style="width: 105%" class="fragment fade-up" -->
+
+
 
 # DVCS
 

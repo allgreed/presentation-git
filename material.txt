@@ -1,8 +1,3 @@
-vcs - - bonus - marking very special points in time (annotated tags)
-### 4th type - Annotated Tag
-
-===================
-
 - 6 / problem 2 - picturize
 
 - odzippowywanie treści skompresowanych przez gita
