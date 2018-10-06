@@ -27,7 +27,7 @@
 
 # Roadmap
 
-- Why version control
+- [What is <s>love</s> version control?](/version-control.html)
 - Git & hub 101
 - [Think like git](/think-like-git.html)
 - Mastering daily operations
@@ -36,24 +36,11 @@
 
 
 
-## Y learn git?
-
-- When you don't work alone
-- When you don't want to work alone anymore
+# Podziękował / EOF
 
 
-## Some of supported technologies
-<img src="/img/supported-languages.jpg">
 
-
-## Gui iz 4 n00bz
-<img src="img/gui-vs-cli.png" style="width: 50%">
-- Learning: <s>GUI</s> CLI
-- Work: whatever gets shit done
-
-[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
-
-
+<!--
 # Git: improved workflow
 ## by Olgierd &#34;Allgreed&#34; Kasprowicz
 
@@ -152,7 +139,6 @@ __git_complete g __git_main
         && vi /tmp/merged-branches \
         && xargs git branch -d </tmp/merged-branches
 ```
-
 - Can't use `_`!
 
 
@@ -252,3 +238,4 @@ or:<br>
 - Enrico Campidoglio - Advanced Git Tips and Tricks (Pluralsight)
 - people's dotfiles
 - my dotfiles
+-->

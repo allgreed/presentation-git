@@ -5,6 +5,31 @@
 - operations on changes groups
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
 
+---
+# Why version control:
+
+## Colaborative:
+- allows auditing (you might think this one is not so important, but it is!)
+
+# Git & hub 101:
+
+<!--
+## Y learn git?
+
+- When you don't work alone
+- When you don't want to work alone anymore
+
+## Gui iz 4 n00bz
+<img src="img/gui-vs-cli.png" style="width: 50%">
+- Learning: <s>GUI</s> CLI
+- Work: whatever gets shit done
+
+[Follow up reading](https://lmddgtfy.net/?q=git%20why%20use%20cli%20instead%20of%20gui)
+
+
+## Some of supported technologies
+<img src="/img/supported-languages.jpg">
+-->
 
 
 
