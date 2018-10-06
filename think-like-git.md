@@ -864,6 +864,22 @@ A[] <- B[A] <- C[B] <- D[C] (X garbage collected over time)
 <!-- .element class="fragment fade-up" -->
 
 
+### But collisions and SHAttered!
+
+| ↓ existing / new → 	| Commit 	| Tree 	| Blob 	|
+|:------------------:	|:------:	|:----:	|:----:	|
+|       Commit       	|    8   	|   9  	|   3  	|
+|        Tree        	|    6   	|   7  	|   2  	|
+|        Blob        	|    4   	|   5  	|   1  	|
+
+`4,5,6 and 9 - fail with an error`<br>
+<!-- .element: class="fragment fade-up" -->
+`2,3 - corrupt repository`<br>
+<!-- .element: class="fragment fade-up" -->
+`1,7,8 - repository moves to an old, valid state`<br>
+<!-- .element: class="fragment fade-up" -->
+
+
 ### Problem: what to send through the wire?
 <img src="/img/db-sync.png" style="width: 60%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
@@ -997,6 +1013,7 @@ ranger .git
 
 ## Sources
 
+<div style="font-size: 80%">
 - [Paolo Perrotta - How Git Works? (Pluralsight)](https://app.pluralsight.com/library/courses/how-git-works/)
 - [Meme](https://twitter.com/agnoster/status/44636629423497217)
 - [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
@@ -1007,3 +1024,5 @@ ranger .git
 - [Git directory layout](https://git-scm.com/docs/gitrepository-layout)
 - [SHA1 to SHA256 transition](https://github.com/git/git/blob/v2.19.0/Documentation/technical/hash-function-transition.txt)
 - [SHA1 collision in git](https://stackoverflow.com/a/23253149/9134286)
+- [Collision behaviours in git](https://stackoverflow.com/a/34599081/9134286)
+<div>
