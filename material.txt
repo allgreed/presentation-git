@@ -6,10 +6,8 @@
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
 
 ---
-# Why version control:
-
 ## Colaborative:
-- allows auditing (you might think this one is not so important, but it is!)
+- additional backup (in case of DVCS)
 
 # Git & hub 101:
 
