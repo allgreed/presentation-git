@@ -6,8 +6,12 @@
 - więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
 
 ---
-## Colaborative:
-- additional backup (in case of DVCS)
+- Ulepszyć obrazek z software proxy (repozytorium z wczesniejszego slajdu, ładniejszy software, checkout i commit na strzałkach)
+    - Ludzie nie mogą bezpośrednio w repozytorium
+        - powtarzalne
+        - poprawne
+        - niekreatywne
+
 
 # Git & hub 101:
 
