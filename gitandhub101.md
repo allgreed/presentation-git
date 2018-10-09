@@ -41,20 +41,20 @@ in order to:
 
 
 
-## 0/5 Installing git
+## 0/7 Installing & configuring git
 
 
 ### GNU/Linux
 ```bash
 (sudo) [package_manager] install git (...)
 
-# example
+# Ubuntu example
 sudo apt install git -y
 ```
 
 ### Mac
 ```bash
-git --version
+git --version # should be preinstalled
 ```
 
 ### Windows
@@ -65,19 +65,44 @@ If you can't google it you won't make it
 [Cheatsheet](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 
-## 1/5 My first & second commit
+### Config
+
+```bash
+git config --global user.email [ insert email here ]
+git config --global user.name [ insert name here ]
+# must in your PATH / aka executable from command line
+git config --global core.editor [ insert your favourite command here ]
+```
+<!-- .element style="width: 100%" -->
+
+#### Example
+```bash
+git config --global user.email john@example.com
+git config --global user.name John Smith 
+git config --global core.editor atom
+```
+<!-- .element style="width: 100%" -->
 
 
-## 2/5 Share it with the world
+## 1/7 My first & second commit
 
 
-## 4/5 Clone
+## 2/7 Create GitHub account
 
 
-## 3/5 Branch
+## 3/7 Share it with the world
 
 
-## 5/5 Request to pull
+## 4/7 Clone
+
+
+## 5/7 Branch
+
+
+## 6/7 Request to pull
+
+
+## 7/7 <s>Knife</s> Fork!
 
 
 

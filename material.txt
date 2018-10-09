@@ -12,10 +12,11 @@
         - poprawne
         - niekreatywne
 ---
-- configuration
 
 - 1/1 vendor in images
-export EDITOR=atom
+- github alternatives
+
+- configuration
 
 - do the instructions for workshop
 - 1:5
