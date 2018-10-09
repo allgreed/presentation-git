@@ -28,7 +28,7 @@
 # Roadmap
 
 - [What is <s>love</s> version control?](/version-control.html)
-- Git & hub 101
+- [Git & hub 101](/gitandhub101.html)
 - [Think like git](/think-like-git.html)
 - Mastering daily operations
 - Advanced configuration & workflow
