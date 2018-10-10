@@ -65,7 +65,7 @@ If you can't google it you won't make it
 [Cheatsheet](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 
-### Config
+### Config (one time thing)
 
 ```bash
 git config --global user.email [ insert email here ]
@@ -85,6 +85,162 @@ git config --global core.editor atom
 
 
 ## 1/7 My first & second commit
+### We need a repo!
+```bash
+mkdir git-workshop # creare a folder for the workshop
+cd git-workshop # get inside it
+mkdir my-first-repo
+cd my-first-repo
+```
+<!-- .element: class="fragment fade-up" -->
+```bash
+git init # sets up the git repository
+
+touch rick.txt
+
+[ editor command from config step ] rick.txt
+```
+<!-- .element: class="fragment fade-up" -->
+```bash
+# rick.txt
+Rick is never gonna:
+- give you up
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+### Thy first commit
+```bash
+git status
+```
+<!-- .element: class="fragment fade-up" -->
+
+```bash
+...
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        rick.txt
+
+...
+```
+<!-- .element: class="fragment fade-up" -->
+
+```
+git add rick.txt # no output means OK
+```
+<!-- .element: class="fragment fade-up" -->
+
+```bash
+git commit # now your text editor should open
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+```
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   rick.txt
+#
+```
+<!-- .element: style="width: 100%" -->
+
+```
+My first commit ever!
+# Please enter the commit message for your changes. Lines starting
+# ...
+#
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+```
+# 0. save the file
+# 1. close the file
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+```
+[master (root-commit) random digits] My first commit ever!
+ 1 file changed, 1 insertion(+)
+ create mode 100644 rick.txt
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+
+
+### The change and the second commit
+
+```bash
+[ editor command from before ] rick.txt
+```
+<!-- .element: class="fragment fade-up" -->
+```bash
+# rick.txt
+Rick is never gonna:
+- give you up
+- let you down
+```
+<!-- .element: class="fragment fade-up" -->
+
+```bash
+git status
+```
+<!-- .element: class="fragment fade-up" -->
+```
+...
+
+modified:   rick.txt
+
+...
+```
+<!-- .element: class="fragment fade-up" -->
+```
+git diff rick.txt
+```
+<!-- .element: class="fragment fade-up" -->
+
+
+```bash
+...
+ Rick is never gonna:
+ - give you up
++- let you down # the "+" sign and colour == addition
+```
+
+<!-- .element: style="width: 100%" -->
+```bash
+git add rick.txt
+git commit
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+
+```bash
+Extend Rick capabilities
+# present, imperative
+
+# the blank line above is important
+Rick is no strager to love, he is thinking of
+full commitment and this is how he feels.
+You would not get this from any other guy. 
+# Please enter the commit message for your changes. Lines starting
+# ...
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+```
+[master c1d8109] Extend Rick capabilities
+ 1 file changed, 1 insertion(+)
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
+
+```
+git log
+git log --oneline
+```
+<!-- .element: style="width: 100%" class="fragment fade-up"-->
 
 
 ## 2/7 Create GitHub account
