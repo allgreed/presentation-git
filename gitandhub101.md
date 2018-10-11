@@ -278,29 +278,39 @@ git log --oneline
 
 ## 3/7 Share it with the world
 
-- img: click repositories
-- img: click new
-- img: type my-first-repo
-- img: click create
-- img: copy this code (hook up existing repo) and pastte it in your terminal
 
+<div style="display: grid; grid-template-columns: 25% 20% 1fr; grid-column-gap: 5%;">
+<img src="/img/37-1.png">
+<img src="/img/37-2.png">
+    <div>
+    <img src="/img/37-3.png">
+    <img src="/img/37-4.png">
+    </div>
+</div>
+<img src="/img/37-5.png">
+
+
+- Paste the commands into your terminal:
+
+```bash
+Username for 'https://github.com': [ your usename ]
+# this works, yet doesn't show your password
+Password for 'https://[ your usename ]@github.com': [your pass here ]
 ```
-Username for 'https://github.com': allgreed-test
-Password for 'https://allgreed-test@github.com':
+<!-- .element style="width: 100%" -->
+```
 Counting objects: 9, done.
 Delta compression using up to 4 threads.
 Compressing objects: 100% (4/4), done.
 Writing objects: 100% (9/9), 813 bytes | 0 bytes/s, done.
 Total 9 (delta 1), reused 0 (delta 0)
 remote: Resolving deltas: 100% (1/1), done.
-remote:
-remote: Create a pull request for 'master' on GitHub by visiting:
-remote:      https://github.com/allgreed-test/my-first-repo/pull/new/master
-remote:
+remote: ...
 To https://github.com/allgreed-test/my-first-repo.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
 ```
+<!-- .element style="width: 100%" -->
 
 
 ## 4/7 Clone
@@ -321,17 +331,18 @@ cd allgreeds-first-repo
 
 ## 5/7 Branch
 
-- branching (name branch after your account)
+- branching
 
 ```
 git checkout -b [branch name]
 ```
-
+### Example (name branch after your account)
 ```
 git checkout -b allgreed
 ```
 
 - make some changes and commit
+
 
 ## 6/7 Request to pull
 

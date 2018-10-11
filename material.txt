@@ -12,15 +12,8 @@
         - poprawne
         - niekreatywne
 ---
-
-- 1/1 vendor in images
-- github alternatives
-
 - do the instructions for workshop
-- 2:7
-- 3:7
 - 4:7
-- 5:7
 - 6:7
 - 7:7
 
