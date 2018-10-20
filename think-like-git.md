@@ -1052,6 +1052,7 @@ ranger .git
 - [More about git hashes](https://stackoverflow.com/questions/7225313/how-does-git-compute-file-hashes)
 - [More about git trees](https://stackoverflow.com/questions/14790681/what-is-the-internal-format-of-a-git-tree-object)
 - [Transfer protocols](https://git-scm.com/book/en/v2/Git-Internals-Transfer-Protocols)
+- [Smart git over HTTP](https://git-scm.com/book/pl/v2/Git-on-the-Server-Smart-HTTP)
 - [Superbrief git explanation](http://eagain.net/articles/git-for-computer-scientists/)
 - [Git directory layout](https://git-scm.com/docs/gitrepository-layout)
 - [SHA1 to SHA256 transition](https://github.com/git/git/blob/v2.19.0/Documentation/technical/hash-function-transition.txt)
