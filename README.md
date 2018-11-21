@@ -27,7 +27,7 @@ To begin you'll need to have installed:
 
 Just server ```.```
 
-### I'm a noob, can't serve for shit :c
+### I'm a noob, cannot into serve :c
 
 That's ok, dawng, just:
 

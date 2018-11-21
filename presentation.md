@@ -9,7 +9,7 @@
 
 ## 🤑
 <!-- .slide: data-background-color="black" -->
-## Avaible for hire!
+## <s>Avaible for hire!</s>
 <hr>
 ## ⌨
 <img style="margin: 0; box-shadow: none; border: 0; background: transparent" src="/img/hs.png">
