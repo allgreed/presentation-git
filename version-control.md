@@ -3,10 +3,8 @@
 
 
 
-> <b>Version control system</b> - system that manages different <span class="fragment highlight-blue" data-fragment-index="2">versions</span> of digital content<br><br>
+> <b>Version control system</b> - system that manages different <span class="fragment highlight-blue" data-fragment-index="1">versions</span> of digital content<br><br>
 > Me
-
-<!-- .element class="fragment fade-up" data-fragment-index="1" -->
 
 
 ## What is version?
@@ -22,16 +20,6 @@
 ## What is version?
 <img src="/img/versions-all.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 <!-- .slide: data-transition="fade" -->
-
-
-## Some VCS software examples:
-- Bazaar
-- Perforce
-- Mercurial
-- CVS
-- SVN (Apache Subversion)
-- Git
-
 
 
 > <b>Version control system</b> - system that manages different versions of digital content<br><br>
@@ -88,7 +76,7 @@
 <img src="/img/ledger.jpg" style="width: 70%">
 
 
-## Let's automate version creation!
+## Metaversioning
 <img src="/img/concept-merge.png" style="margin: 0; box-shadow: none; border: 0; background: transparent">
 
 

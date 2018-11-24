@@ -6,6 +6,13 @@
 ## Why git?
 ### Svn works fine, right?
 
+- Bazaar
+- Perforce
+- Mercurial
+- CVS
+- SVN (Apache Subversion)
+
+
 <img src="/img/gitpopularity.png">
 
 
