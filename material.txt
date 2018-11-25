@@ -1,18 +1,5 @@
+- 5 / 30 - demo, pics, etc.
 - 6 / problem 2 - picturize
-
-- odzippowywanie treści skompresowanych przez gita
-
-- operations on changes groups
-- więcej o diffie, merdżach i rebase'ach? - co to znaczy apply patch
-
-https://stackoverflow.com/questions/18731887/why-does-git-store-objects-in-directories-with-the-first-two-characters-of-the-h
-
----
-- Ulepszyć obrazek z software proxy (repozytorium z wczesniejszego slajdu, ładniejszy software, checkout i commit na strzałkach)
-    - Ludzie nie mogą bezpośrednio w repozytorium
-        - powtarzalne
-        - poprawne
-        - niekreatywne
 ---
 - do the instructions for workshop
 - 4:7

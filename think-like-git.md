@@ -66,8 +66,6 @@ $ echo "elorap" | git hash-object --stdin
 <!-- .element: class="fragment fade-up" -->
 `1 moon ~ 10^47 atoms`<br>
 <!-- .element: class="fragment fade-up" -->
-`10 moons ~ 10^48 atoms`<br>
-<!-- .element: class="fragment fade-up" -->
 `Birthday attack?`<br>
 <!-- .element: class="fragment fade-up" -->
 `5 * 10^25 commits -> 0.1% probability of collision`<br>
@@ -133,7 +131,9 @@ echo "elorap" | git hash-object --stdin -w
 
 #### Retrive
 
-```
+```bash
+pigz -d < .git/objects/25/11755d6bfe6afb0462cc8ba7b254e371b7e191 
+# or - the easy way
 git cat-file -p 2511755d6bfe6afb0462cc8ba7b254e371b7e191
 ```
 <!-- .element: class="fragment fade-up" -->
@@ -434,18 +434,18 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 <!-- .element class="fragment fade-in" -->
 
-> <span style="text-decoration: underline">Git</span> - a growing list of records, called <span style="text-decoration: underline">commits</span>, which are linked using cryptography.
+> <span style="text-decoration: underline">Git</span> - a <span style="text-decoration: underline"> list of</span> growing lists of records, called <span style="text-decoration: underline">commits</span>, which are linked using cryptography.
 
 <!-- .element class="fragment fade-in" -->
 
 
-> Each <span style="text-decoration: underline">block</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">block</span>, a timestamp, and transaction data<br>
+> Each <span style="text-decoration: underline">block</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">block</span>, a timestamp, and <span style="text-decoration: underline">transaction</span> data<br>
  ~ [Wikipedia/Blockchain](https://en.wikipedia.org/wiki/Blockchain)
 <br>
 
 <!-- .element -->
 
-> Each <span style="text-decoration: underline">commit</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">commit</span>, a timestamp, and transaction data
+> Each <span style="text-decoration: underline">commit</span> contains a cryptographic hash of the previous <span style="text-decoration: underline">commit</span>, a timestamp, and <span style="text-decoration: underline">content</span> data
 
 <!-- .element class="fragment fade-in" -->
 
@@ -464,8 +464,9 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 ### What we want
 - Reviewing particular version
+- Review changes between versions
 - Marking special points in time
-- Separating groups of changes
+- Separating groups of versions
 
 
 ### Before we begin
@@ -550,6 +551,65 @@ $ cat .git/HEAD
 <!-- .element: class="fragment fade-up" -->
 
 
+### Review changes between versions
+
+```
+git diff <one_version> <other_version>
+```
+
+<pre class="fragment fade-up"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape><span style="color: #17ff2e">+This line has been added,</span>
+ those lines are
+ just for context
+<span style="color: #ff2c2d">-Line removed</span>
+</code></pre>
+
+
+### Demo
+
+```bash
+mkdir -p /tmp/demos/diff
+cd $_
+git init
+
+echo "This is no. 0 version of this file" > whatever.txt
+git add --all
+git commit -m "Version 0"
+
+echo "Add some stuff" >> whatever.txt
+git add --all
+git commit -m "Version 1"
+
+ST_COMMIT_HASH=`git log --oneline --no-abbrev | tail -n 1 | cut -f 1 -d' '`
+ND_COMMIT_HASH=`git log --oneline --no-abbrev | head -n 1 | cut -f 1 -d' '`
+```
+<!-- .element style="width: 110%" -->
+
+
+```bash
+git diff $ST_COMMIT_HASH $ND_COMMIT_HASH
+```
+
+<pre class="fragment fade-up" data-fragment-index="1"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape><b>diff --git a/whatever.txt b/whatever.txt
+index 188c425..1415a1a 100644
+--- a/whatever.txt
++++ b/whatever.txt</b>
+<span class="fragment highlight-blue" data-fragment-index="1">@@ -1 +1,2 @@</span>
+ This is no. 0 version of this file
+<span class="fragment highlight-green" data-fragment-index="1">+Add some stuff</span></code></pre>
+
+```bash
+git diff $ND_COMMIT_HASH $ST_COMMIT_HASH
+```
+
+<pre class="fragment fade-up" data-fragment-index="2"><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape><b>diff --git a/whatever.txt b/whatever.txt
+index 1415a1a..188c425 100644
+--- a/whatever.txt
++++ b/whatever.txt</b>
+<span class="fragment highlight-blue" data-fragment-index="2">@@ -1,2 +1 @@</span>
+ This is no. 0 version of this file
+<span class="fragment highlight-red" data-fragment-index="2">-Add some stuff</span></code></pre>
+
+
 ### Marking special points in time
 <img src="/img/special-points-in-time.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
@@ -594,7 +654,39 @@ commit aa2b897b78cfa402a19e7b679780f7fe57ac0e3f
 <!-- .element: class="fragment fade-up" -->
 
 
-### Separating groups of changes
+### Marking <span style="text-decoration: underline">very</span> special points in time
+<img src="/img/annotated-tag.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+Sidenote: We've covered all of git database
+<!-- .element: class="fragment fade-up" -->
+
+
+### Demo
+```bash
+mkdir -p /tmp/demos/annotated-tag
+cd $_
+git init
+echo "something" > whatever; git add -A; git commit -m "my commit"
+COMMIT_HASH=`git log --oneline --no-abbrev  | cut -f 1 -d' '`
+
+git tag my-tag $COMMIT_HASH -a -m "I can add message to tag!"
+
+TAG_REF_OBJECT=$(cat .git/refs/tags/my-tag)
+git cat-file -p $TAG_REF_OBJECT
+```
+<!-- .element style="width: 105%" -->
+```bash
+object 3df4a972dc34bd4775d6c9ca3a49481f6e420371 # this equals $COMMIT_HASH
+type commit
+tag my-tag
+tagger Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1538832910 +0200
+
+I can add message to tag!
+```
+<!-- .element style="width: 105%" class="fragment fade-up" -->
+
+
+### Separating groups of versions
 <img src="/img/linear-commits.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 <img src="/img/branched-commits.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
@@ -702,47 +794,96 @@ HEAD not attached to any ref
 <img src="/img/gc.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
-### Operations on groups of changes
-<!--
-### Merges
+## Metaversioning
+### Appling patch
+```bash
+# just a recap
+diff :: content, content -> patch
+diff(a,b)
+
+apply :: patch, content -> content
+apply(p, c)
+```
+
+```
+apply(diff(a, b), a) == b
+```
+<!-- .element: class="fragment fade-in" -->
+
+
+### Conceptual demo
+```bash
+this
+is
+sample
+file
+```
+
+<pre><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape><span style="color: #17ff2e">+Howdy,</span>
+ this
+ is
+<span style="color: #ff2c2d">-sample</span>
+<span style="color: #17ff2e">+a very special</span>
+ file
+<span style="color: #17ff2e">+containing</span>
+<span style="color: #17ff2e">+text</span>
+</code></pre>
+
+
+### Real demo
+
+```bash
+mkdir -p /tmp/demos/patch-aplication
+cd $_
+git init
+
+echo -e "some\nsample\ncontent\n" > whatever.txt
+git add --all
+git commit -m "dont care"
+
+echo -e "simple\nsample\ntext file\n" > whatever.txt
+cat whatever.txt
+
+git diff > ../my-diff.diff
+git checkout . # reset back to original state
+```
+
+```bash
+git apply ../my-diff.diff
+cat whatever.txt
+```
+<!-- .element: class="fragment fade-in" -->
+
+
+### Cherry-pick and rebase
+```bash
+# cherry-pick, pseudocode
+# takes <commit>
+
+git diff HEAD <commit> > tmp.diff
+git apply tmp.diff
+git add <files changed in tmp.diff>
+git commit -m <message of <commit>>
+
+rm tmp.diff # just for the sake of completeness
+```
+
+```bash
+# rebase, pseudocode
+# takes <src_commit> and <dest_commit>
+# sidenote: gets much more powerfull with -i option
+
+for commit in commits_between(<src_commit>, <dest_commit>):
+    cherry-pick(commit)
+```
+<!-- .element: class="fragment fade-in" -->
+
+
+## Merges
 
 - **Merge**: integrating changes between branches
 - **Fast-forward merge**: Merging without a merge commit
-
-### Rebases
--->
-
-
-### Bonus: marking <span style="text-decoration: underline">very</span> special points in time
-<img src="/img/annotated-tag.png" style="width: 80%; margin: 0; box-shadow: none; border: 0; background: transparent">
-
-Sidenote: We've covered all of git database
-<!-- .element: class="fragment fade-up" -->
-
-
-### DEMO
-```bash
-mkdir -p /tmp/demos/annotated-tag
-cd $_
-git init
-echo "something" > whatever; git add -A; git commit -m "my commit"
-COMMIT_HASH=`git log --oneline --no-abbrev  | cut -f 1 -d' '`
-
-git tag my-tag $COMMIT_HASH -a -m "I can add message to tag!"
-
-TAG_REF_OBJECT=$(cat .git/refs/tags/my-tag)
-git cat-file -p $TAG_REF_OBJECT
-```
-<!-- .element style="width: 105%" -->
-```bash
-object 3df4a972dc34bd4775d6c9ca3a49481f6e420371 # this equals $COMMIT_HASH
-type commit
-tag my-tag
-tagger Olgierd "Allgreed" Kasprowicz <olixem@gmail.com> 1538832910 +0200
-
-I can add message to tag!
-```
-<!-- .element style="width: 105%" class="fragment fade-up" -->
+- merge commit - 2 parents
 
 
 
@@ -1045,7 +1186,7 @@ ranger .git
 
 ## Sources
 
-<div style="font-size: 80%">
+<div style="font-size: 70%">
 - [Paolo Perrotta - How Git Works? (Pluralsight)](https://app.pluralsight.com/library/courses/how-git-works/)
 - [Meme](https://twitter.com/agnoster/status/44636629423497217)
 - [About git hashes](https://stackoverflow.com/questions/552659/how-to-assign-a-git-sha1s-to-a-file-without-git)
@@ -1058,4 +1199,5 @@ ranger .git
 - [SHA1 to SHA256 transition](https://github.com/git/git/blob/v2.19.0/Documentation/technical/hash-function-transition.txt)
 - [SHA1 collision in git](https://stackoverflow.com/a/23253149/9134286)
 - [Collision behaviours in git](https://stackoverflow.com/a/34599081/9134286)
+- [Why first 2 letters of a hash are separate directory](https://stackoverflow.com/questions/18731887/why-does-git-store-objects-in-directories-with-the-first-two-characters-of-the-h)
 <div>
