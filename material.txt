@@ -1,5 +1,6 @@
 5/30 - add a demo for that?
-6/13 - better viz
+
+- przerobić strzałki na białe w prezce
 
 ===============================
 
