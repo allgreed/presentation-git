@@ -159,7 +159,7 @@ ranger .git
 
 
 ## Wait a sec...
-### We only add, but never delete...
+### how do I free() stuff?
 <!-- .element: class="fragment fade-in" -->
 <img src="/img/garbadge-colection.jpg" class="fragment fade-in" style="width: 60%; margin: 0">
 
@@ -429,12 +429,12 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 ## Blockchain
 
-> <span style="text-decoration: underline">Blockchain</span> - a growing list of records, called <span style="text-decoration: underline">blocks</span>, which are linked using cryptography.<br>
+> Blockchain - a growing list of records, called <span style="text-decoration: underline">blocks</span>, which are linked using cryptography.<br>
 ~ [Wikipedia/Blockchain](https://en.wikipedia.org/wiki/Blockchain)
 
 <!-- .element class="fragment fade-in" -->
 
-> <span style="text-decoration: underline">Git</span> - a <span style="text-decoration: underline"> list of</span> growing lists of records, called <span style="text-decoration: underline">commits</span>, which are linked using cryptography.
+> Git - a growing lists of records, called <span style="text-decoration: underline">commits</span>, which are linked using cryptography.
 
 <!-- .element class="fragment fade-in" -->
 
@@ -451,7 +451,13 @@ git cat-file -p 6291a11c4a94b59c5737009ad0c965cab855736b
 
 
 ## ??? :)
+> Blockchain was invented by Satoshi Nakamoto in 2008.
+
+<!-- .element -->
+
 > Blockchain was invented by <s>Satoshi Nakamoto</s> Linus Torwalds in <s>2008</s> 2005.
+
+<!-- .element class="fragment fade-in" -->
 
 
 
@@ -796,13 +802,10 @@ HEAD not attached to any ref
 
 ## Metaversioning
 ### Appling patch
-```bash
-# just a recap
+```haskell
 diff :: content, content -> patch
-diff(a,b)
 
 apply :: patch, content -> content
-apply(p, c)
 ```
 
 ```
@@ -811,26 +814,7 @@ apply(diff(a, b), a) == b
 <!-- .element: class="fragment fade-in" -->
 
 
-### Conceptual demo
-```bash
-this
-is
-sample
-file
-```
-
-<pre><code class="nohighlight" style="background: #3f3f3f; color: #dcdcdc;" data-noescape><span style="color: #17ff2e">+Howdy,</span>
- this
- is
-<span style="color: #ff2c2d">-sample</span>
-<span style="color: #17ff2e">+a very special</span>
- file
-<span style="color: #17ff2e">+containing</span>
-<span style="color: #17ff2e">+text</span>
-</code></pre>
-
-
-### Real demo
+### Demo
 
 ```bash
 mkdir -p /tmp/demos/patch-aplication
@@ -856,25 +840,20 @@ cat whatever.txt
 
 
 ### Cherry-pick and rebase
-```bash
-# cherry-pick, pseudocode
-# takes <commit>
+```python
+def cherry_pick(commit):
+    git diff HEAD <commit> > tmp.diff
+    git apply tmp.diff
+    git add <files changed in tmp.diff>
+    git commit -m <message of <commit>>
 
-git diff HEAD <commit> > tmp.diff
-git apply tmp.diff
-git add <files changed in tmp.diff>
-git commit -m <message of <commit>>
-
-rm tmp.diff # just for the sake of completeness
+    rm tmp.diff # just for the sake of completeness
 ```
 
-```bash
-# rebase, pseudocode
-# takes <src_commit> and <dest_commit>
-# sidenote: gets much more powerfull with -i option
-
-for commit in commits_between(<src_commit>, <dest_commit>):
-    cherry-pick(commit)
+```python
+def rebase(src_commit, dest_commit)
+    for commit in commits_between(<src_commit>, <dest_commit>):
+        cherry-pick(commit)
 ```
 <!-- .element: class="fragment fade-in" -->
 
@@ -883,7 +862,7 @@ for commit in commits_between(<src_commit>, <dest_commit>):
 
 - **Merge**: integrating changes between branches
 - **Fast-forward merge**: Merging without a merge commit
-- merge commit - 2 parents
+- **Merge commit** - a commit with 2 parents
 
 
 
@@ -1005,36 +984,30 @@ Id, Name, Possesion, Previous state
 
 
 ### Problem: how to maintain data integrity?
-
 <img src="/img/haxxxor.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### Solution
+<!-- .slide: data-transition="fade" -->
+<img src="/img/mallory0.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
-```
-A[] <- B[A]
-```
-<!-- .element class="fragment fade-up" -->
 
-```
-A[] <- B[A] <- X[B] (malicious commit inejcted)
-```
-<!-- .element class="fragment fade-up" -->
+### Solution
+<!-- .slide: data-transition="fade" -->
+<img src="/img/mallory1.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
-```
-A[] <- B[A] <- X[B] (D incoming)
-```
-<!-- .element class="fragment fade-up" -->
 
-```
-A[] <- B[A] <- X[B] | C[B] <- D[C] (C picked up)
-```
-<!-- .element class="fragment fade-up" -->
-<br>
-```
-A[] <- B[A] <- C[B] <- D[C] (X garbage collected over time)
-```
-<!-- .element class="fragment fade-up" -->
+### Solution
+<!-- .slide: data-transition="fade" -->
+<img src="/img/mallory2.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+<!-- .slide: data-transition="fade" -->
+<img src="/img/mallory3.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
+
+
+<!-- .slide: data-transition="fade" -->
+<img src="/img/mallory4.png" style="width: 70%; margin: 0; box-shadow: none; border: 0; background: transparent">
 
 
 ### But collisions and SHAttered!

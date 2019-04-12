@@ -1,14 +1,5 @@
-Update employer / download the contents of this slide from my webpage xD
-3/8 - ok, I now how to add stuff, how to free() them? instead of writing what I'd like to say
-4/16 - typo, better underlining
-4/18 - same form as before
-5/15 - remove commit from inside the circle
-5/26 - syntax highlighting, haskell notation maybe? :D
-5/27 - ???
-5/29 - syntax highlighting
 5/30 - add a demo for that?
 6/13 - better viz
-6/23 - something about longest chain winning?
 
 ===============================
 
