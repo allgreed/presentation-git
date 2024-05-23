@@ -5,8 +5,8 @@
 
 ## Foreword
 
-
-<img src="img/xkcd-git-meme.png" style="width: 45%">
+> It is easy to shoot your foot off with git, but also easy to revert to a previous foot and merge it with your current leg. 
+> ~ Jack William Bell
 
 
 <img src="img/git-gets-easy.png" style="width: 200%">
